@@ -1,0 +1,203 @@
+/* ── FOOTER ── */
+.footer {
+  background: var(--negro);
+  border-top: 3px solid var(--terracota);
+}
+
+.main {
+  padding: 60px 0 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1fr;
+  gap: 48px;
+}
+
+/* ── MARCA ── */
+.brand .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.logoIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: var(--terracota);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logoIcon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoName {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--blanco);
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.logoSub {
+  font-size: 10px;
+  color: var(--terracota);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.brand p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.tagline {
+  font-style: italic;
+  font-size: 14px;
+  color: rgba(255,255,255,0.75) !important;
+  margin-bottom: 20px !important;
+}
+
+.tagline strong {
+  color: var(--terracota);
+  font-style: normal;
+}
+
+/* ── SOCIALS ── */
+.socials {
+  display: flex;
+  gap: 10px;
+}
+
+.social {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.6);
+  transition: all var(--transition);
+}
+
+.social:hover {
+  background: var(--terracota);
+  border-color: var(--terracota);
+  color: var(--blanco);
+}
+
+/* ── COLUMNAS ── */
+.col h4 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--terracota);
+  margin-bottom: 16px;
+}
+
+.col a {
+  display: block;
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 8px;
+  transition: color var(--transition);
+}
+
+.col a:hover {
+  color: var(--blanco);
+}
+
+/* ── CONTACTO ── */
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: rgba(255,255,255,0.5);
+}
+
+.contactItem svg {
+  color: var(--terracota);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.contactItem span {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* ── BOTTOM ── */
+.bottom {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding: 18px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.bottom p {
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+}
+
+.bottom span {
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+}
+
+.bottom a {
+  color: var(--terracota);
+  transition: opacity var(--transition);
+}
+
+.bottom a:hover {
+  opacity: 0.8;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.logoImg {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+}

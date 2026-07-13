@@ -1,0 +1,155 @@
+/* ═══════════════════════════════════════
+   COMINAGRO — Variables y Reset Global
+   ═══════════════════════════════════════ */
+
+:root {
+  /* ── Terracota ── */
+  --terracota:   #B95A3E;
+  --terracota-d: #963122;
+  --terracota-l: #D4715A;
+  --terracota-bg: rgba(185,90,62,0.08);
+
+  /* ── Azul (más protagonismo) ── */
+  --azul:        #1E3A5F;
+  --azul-d:      #152840;
+  --azul-l:      #2A5080;
+  --azul-bg:     rgba(30,58,95,0.08);
+
+  /* ── Neutros ── */
+  --negro:       #1B1B1B;
+  --gris:        #5B5B5B;
+  --gris-claro:  #B7B7B7;
+  --blanco:      #FFFFFF;
+  --fondo:       #F5F4F1;
+  --fondo-card:  #FAFAF8;
+  --borde:       rgba(0,0,0,0.08);
+
+  /* ── Fichas técnicas ── */
+  --ficha-header: #1E3A5F;
+  --ficha-row:    #F0F4F8;
+  --ficha-alt:    #FFFFFF;
+
+  /* ── Badges de uso ── */
+  --uso-peatonal:  #2A5080;
+  --uso-vehicular: #1B1B1B;
+  --uso-zonas:     #2E7D4F;
+  --uso-muro:      #5B3A1A;
+  --uso-fachada:   #B95A3E;
+  --uso-division:  #6B4C9A;
+
+  /* ── Espaciado y forma ── */
+  --radius:    6px;
+  --radius-lg: 12px;
+  --radius-xl: 20px;
+  --shadow:    0 2px 16px rgba(0,0,0,0.10);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.18);
+  --transition: 0.25s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* ── RESET ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--negro);
+  background: var(--blanco);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img  { max-width: 100%; display: block; }
+a    { text-decoration: none; color: inherit; }
+ul   { list-style: none; }
+
+button {
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  border: none;
+  outline: none;
+}
+
+/* ── UTILIDADES ── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section     { padding: 80px 0; }
+.section-alt { background: var(--fondo); }
+.section-azul { background: var(--azul); }
+
+/* ── FICHA TÉCNICA (reutilizable) ── */
+.ficha {
+  border: 1px solid var(--borde);
+  border-radius: var(--radius);
+  overflow: hidden;
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+.ficha-header {
+  background: var(--azul);
+  color: var(--blanco);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 8px 14px;
+}
+
+.ficha-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 14px;
+  border-bottom: 1px solid var(--borde);
+}
+
+.ficha-row:last-child  { border-bottom: none; }
+.ficha-row:nth-child(even) { background: var(--ficha-row); }
+
+.ficha-row .key {
+  font-weight: 600;
+  color: var(--gris);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ficha-row .val {
+  font-weight: 700;
+  color: var(--negro);
+  font-size: 13px;
+}
+
+/* ── BADGE DE USO ── */
+.uso-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--blanco);
+}
+
+.uso-peatonal  { background: var(--uso-peatonal); }
+.uso-vehicular { background: var(--uso-vehicular); }
+.uso-zonas     { background: var(--uso-zonas); }
+.uso-muro      { background: var(--uso-muro); }
+.uso-fachada   { background: var(--uso-fachada); }
+.uso-division  { background: var(--uso-division); }

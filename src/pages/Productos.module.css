@@ -1,0 +1,443 @@
+/* ==========================================================================
+   ── VARIABLES & CONFIGURACIÓN BASE (Por si acaso)
+   ========================================================================== */
+/* Nota: Asegúrate de tener estas variables definidas en tu archivo global o úsalas como referencia */
+
+/* ── PAGE HERO ── */
+.pageHero {
+  background: var(--negro);
+  padding: 130px 0 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.pageHero::before {
+  content: '';
+  position: absolute;
+  right: -100px;
+  top: -100px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(185,90,62,0.12) 0%, transparent 70%);
+}
+
+.breadcrumb {
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 14px;
+}
+
+.breadcrumb em {
+  color: var(--terracota);
+  font-style: normal;
+}
+
+.pageHero h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 800;
+  color: var(--blanco);
+  line-height: 1.05;
+  margin-bottom: 14px;
+}
+
+.pageHero h1 em {
+  color: var(--terracota);
+  font-style: normal;
+}
+
+.pageHero p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.65);
+  max-width: 540px;
+  line-height: 1.6;
+}
+
+/* ── SECTION ── */
+.section {
+  background: var(--blanco);
+}
+
+/* ── FILTER BAR ── */
+.filterBar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.chip {
+  padding: 8px 20px;
+  border-radius: 24px;
+  border: 1.5px solid rgba(0,0,0,0.1);
+  font-size: 13px;
+  cursor: pointer;
+  background: var(--blanco);
+  color: var(--gris);
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  transition: all var(--transition);
+}
+
+.chip:hover {
+  border-color: var(--terracota);
+  color: var(--terracota);
+}
+
+.chipActive {
+  background: var(--terracota);
+  color: var(--blanco);
+  border-color: var(--terracota);
+}
+
+/* ── COUNT ── */
+.count {
+  font-size: 13px;
+  color: var(--gris);
+  margin-bottom: 24px;
+}
+
+.count strong {
+  color: var(--terracota);
+  font-weight: 700;
+}
+
+/* ── GRID ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ── CARD ── */
+.card {
+  background: var(--blanco);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(0,0,0,0.07);
+  overflow: hidden;
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ── IMG WRAP & NAV ── */
+.imgWrap {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.imgWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+  background: var(--fondo);
+  padding: 8px;
+}
+
+.card:hover .imgWrap img {
+  transform: scale(1.05);
+}
+
+/* Flechas de navegación */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.45);
+  border: none;
+  color: var(--blanco);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition);
+  z-index: 2;
+  opacity: 0;
+}
+
+.imgWrap:hover .arrow {
+  opacity: 1;
+}
+
+.arrow:hover {
+  background: var(--terracota);
+}
+
+.arrowLeft  { left: 10px; }
+.arrowRight { right: 10px; }
+
+/* Contador de fotos */
+.counter {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.5);
+  color: var(--blanco);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 12px;
+  z-index: 2;
+}
+
+/* ── CARD BODY ── */
+.body {
+  padding: 22px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.bodyTop {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.body h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--negro);
+  margin-bottom: 8px;
+}
+
+.body p {
+  font-size: 13px;
+  color: var(--gris);
+  line-height: 1.6;
+  margin-bottom: 14px;
+  flex: 1;
+}
+
+/* ── FICHA TOGGLE BUTTON ── */
+.fichaToggle {
+  width: 100%;
+  padding: 9px 14px;
+  background: var(--fondo, #f8f9fa);
+  color: var(--gris);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius);
+  font-size: 12px;
+  font-weight: 700;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: all var(--transition);
+  text-align: left;
+  margin-bottom: 14px;
+  letter-spacing: 0.3px;
+}
+
+.fichaToggle:hover {
+  background: var(--negro);
+  color: var(--blanco);
+  border-color: var(--negro);
+}
+
+/* ── PRODUCT CARD CTA ── */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: var(--negro);
+  color: var(--blanco);
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 600;
+  transition: all var(--transition);
+  align-self: flex-start;
+}
+
+.cta:hover {
+  background: var(--terracota);
+}
+
+/* ==========================================================================
+   ── CORRECCIONES AGREGADAS: FICHA TÉCNICA CLASES GLOBALES
+   ========================================================================== */
+:global(.ficha) {
+  background: var(--fondo, #f8f9fa);
+  border-radius: var(--radius, 6px);
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+:global(.ficha-header) {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--negro);
+  margin-bottom: 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 4px;
+}
+
+:global(.ficha-row) {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 4px 0;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.05);
+}
+
+:global(.ficha-row:last-child) {
+  border-bottom: none;
+}
+
+:global(.ficha-row .key) {
+  color: var(--gris);
+  font-weight: 500;
+}
+
+:global(.ficha-row .val) {
+  color: var(--negro);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   ── CORRECCIONES AGREGADAS: BADGES DE USO DINÁMICOS
+   ========================================================================== */
+:global(.uso-badge) {
+  display: inline-flex;
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Colores de Badges por tipo de uso técnico */
+:global(.uso-peatonal) {
+  background-color: #e3f2fd;
+  color: #0d47a1;
+}
+
+:global(.uso-vehicular) {
+  background-color: #fff3e0;
+  color: #e65100;
+}
+
+:global(.uso-zonas) {
+  background-color: #e8f5e9;
+  color: #1b5e20;
+}
+
+:global(.uso-mamposteria), :global(.uso-muro) {
+  background-color: #efebe9;
+  color: #4e342e;
+}
+
+:global(.uso-fachada), :global(.uso-fachadas) {
+  background-color: #fbe9e7;
+  color: #d84315;
+}
+
+:global(.uso-divisiones), :global(.uso-division) {
+  background-color: #f3e5f5;
+  color: #4a148c;
+}
+
+:global(.uso-concreto) {
+  background-color: #eceff1;
+  color: #37474f;
+}
+
+:global(.uso-Afirmado\ suelo\ humedo), 
+:global(.uso-Afirmado\ Pisos\ y\ Vias) {
+  background-color: #fffde7;
+  color: #f57f17;
+}
+
+/* ==========================================================================
+   ── BOTTOM CTA SECTION ──
+   ========================================================================== */
+.ctaSection {
+  background: var(--negro);
+  padding: 80px 0;
+}
+
+.ctaInner {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ctaTag {
+  display: block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--terracota);
+  margin-bottom: 14px;
+}
+
+.ctaInner h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  color: var(--blanco);
+  margin-bottom: 14px;
+  line-height: 1.1;
+}
+
+.ctaInner h2 em {
+  color: var(--terracota);
+  font-style: normal;
+}
+
+.ctaInner p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  background: var(--terracota);
+  color: var(--blanco);
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 600;
+  transition: all var(--transition);
+}
+
+.btnPrimary:hover {
+  background: var(--terracota-d);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(185,90,62,0.35);
+}
+
+/* ==========================================================================
+   ── RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; }
+  .filterBar { gap: 6px; }
+}

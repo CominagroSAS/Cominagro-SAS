@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proyectos – Cominagro S.A.S</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="navbar" id="navbar">
+  <div class="container"><div class="navbar-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon"><svg viewBox="0 0 28 24" fill="none"><polygon points="0,24 14,2 28,24" stroke="#B95A3E" stroke-width="2.5" fill="none"/><polygon points="5,24 14,6 23,24" stroke="white" stroke-width="1.5" fill="rgba(185,90,62,0.2)"/><rect x="0" y="21" width="28" height="3" fill="#B95A3E"/></svg></div>
+      <div class="nav-logo-text"><div class="name">COMINAGRO</div><div class="sub">Mina Las Terrazas</div></div>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Inicio</a><a href="nosotros.html">Nosotros</a>
+      <div class="nav-dropdown">
+        <a href="productos.html">Productos<svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="dropdown-menu">
+          <a href="productos.html#prefabricados"><span class="dot"></span>Prefabricados</a>
+          <a href="productos.html#bloques"><span class="dot"></span>Bloques en Arcilla</a>
+          <a href="productos.html#ladrillera"><span class="dot"></span>Ladrillera</a>
+          <a href="productos.html#mineria"><span class="dot"></span>Minería</a>
+        </div>
+      </div>
+      <a href="proyectos.html" class="active">Proyectos</a><a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="nav-cta"><a href="contacto.html" class="btn btn-primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12h6M9 16h6M17 21H7a2 2 0 01-2-2V5a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2z"/></svg>Cotizar</a></div>
+    <button class="hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Inicio</a><a href="nosotros.html">Nosotros</a>
+  <a href="productos.html">Productos</a><a href="proyectos.html">Proyectos</a>
+  <a href="contacto.html">Contacto</a>
+  <a href="contacto.html" class="btn btn-primary mobile-cta">Cotizar ahora →</a>
+</div>
+
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <div class="breadcrumb">Inicio <em>/ Proyectos</em></div>
+    <h1>Proyectos <em>Realizados</em></h1>
+    <p>Obras en toda la región de Nariño que confían en la calidad y respaldo de Cominagro S.A.S.</p>
+  </div>
+</section>
+
+<!-- STATS BANNER -->
+<div class="stats-banner">
+  <div class="container stats-banner-inner">
+    <div class="sb-item"><div class="n" data-count="50" data-suffix="+">50+</div><div class="l">Proyectos entregados</div></div>
+    <div class="sb-item"><div class="n" data-count="8" data-suffix="">8</div><div class="l">Municipios atendidos</div></div>
+    <div class="sb-item"><div class="n" data-count="500" data-suffix="+">500+</div><div class="l">Clientes satisfechos</div></div>
+    <div class="sb-item"><div class="n" data-count="27" data-suffix="+">27+</div><div class="l">Años de experiencia</div></div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="filter-bar">
+      <button class="filter-chip active" data-filter="all">Todos</button>
+      <button class="filter-chip" data-filter="residencial">Residencial</button>
+      <button class="filter-chip" data-filter="vias">Vías</button>
+      <button class="filter-chip" data-filter="comercial">Comercial</button>
+      <button class="filter-chip" data-filter="urbanizacion">Urbanización</button>
+    </div>
+
+    <div class="proyectos-grid">
+      <div class="proy-card fade-up" data-category="residencial">
+        <div class="proy-img"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Urbanización La Colina" loading="lazy"><span class="proy-cat">Residencial</span></div>
+        <div class="proy-body"><h3>Urbanización La Colina</h3><p>Proyecto de 80 viviendas en Pasto. Suministro de bloques, arena y adoquines para la totalidad de la obra y zonas comunes.</p><div class="proy-tags"><span class="proy-tag">Bloques</span><span class="proy-tag">Adoquines</span><span class="proy-tag">Pasto</span></div></div>
+      </div>
+      <div class="proy-card fade-up" data-category="vias">
+        <div class="proy-img"><img src="https://images.unsplash.com/photo-1561417258-1d49dbd37800?w=600&q=80" alt="Vía Tangua" loading="lazy"><span class="proy-cat">Vías</span></div>
+        <div class="proy-body"><h3>Vía Tangua – El Pedregal</h3><p>Pavimentación de vía rural con suministro de granzón y adoquines para 2.4 km de carretera en el municipio de Tangua.</p><div class="proy-tags"><span class="proy-tag">Granzón</span><span class="proy-tag">Adoquines</span><span class="proy-tag">Tangua</span></div></div>
+      </div>
+      <div class="proy-card fade-up" data-category="comercial">
+        <div class="proy-img"><img src="https://images.unsplash.com/photo-1590593162201-f67611a18b87?w=600&q=80" alt="Centro comercial Ipiales" loading="lazy"><span class="proy-cat">Comercial</span></div>
+        <div class="proy-body"><h3>Centro Comercial Ipiales</h3><p>Suministro de materiales estructurales para construcción de local comercial de 1.200 m² en Ipiales, Nariño.</p><div class="proy-tags"><span class="proy-tag">Bloques</span><span class="proy-tag">Arena</span><span class="proy-tag">Ipiales</span></div></div>
+      </div>
+      <div class="proy-card fade-up" data-category="residencial">
+        <div class="proy-img"><img src="https://images.unsplash.com/photo-1604709177225-055f85ff34d3?w=600&q=80" alt="Conjunto Villa del Sur" loading="lazy"><span class="proy-cat">Residencial</span></div>
+        <div class="proy-body"><h3>Conjunto Villa del Sur</h3><p>45 casas unifamiliares en La Florida. Arena, ladrillos y prefabricados Cominagro para la totalidad de la obra.</p><div class="proy-tags"><span class="proy-tag">Arena</span><span class="proy-tag">Ladrillos</span><span class="proy-tag">La Florida</span></div></div>
+      </div>
+      <div class="proy-card fade-up" data-category="urbanizacion">
+        <div class="proy-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Parque La Esperanza" loading="lazy"><span class="proy-cat">Urbanización</span></div>
+        <div class="proy-body"><h3>Parque La Esperanza</h3><p>Construcción de parque urbano en Túquerres con adoquines y prefabricados Cominagro. 3.500 m² de área intervenida.</p><div class="proy-tags"><span class="proy-tag">Adoquines</span><span class="proy-tag">Prefabricados</span><span class="proy-tag">Túquerres</span></div></div>
+      </div>
+      <div class="proy-card fade-up" data-category="vias">
+        <div class="proy-img"><img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&q=80" alt="Andenes Sandoná" loading="lazy"><span class="proy-cat">Vías</span></div>
+        <div class="proy-body"><h3>Andenes Barrio Centro</h3><p>Renovación de andenes del casco urbano de Sandoná con adoquines de alta resistencia. 1.2 km intervenidos.</p><div class="proy-tags"><span class="proy-tag">Adoquines</span><span class="proy-tag">Sandoná</span><span class="proy-tag">Obra civil</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <div style="text-align:center;color:white;max-width:600px;margin:0 auto">
+      <span class="tag" style="color:var(--terracota)">Su obra es la siguiente</span>
+      <h2 style="font-family:var(--font-display);font-size:clamp(26px,4vw,40px);font-weight:800;color:white;margin-bottom:14px">¿Tiene un proyecto en <em style="color:var(--terracota);font-style:normal">mente?</em></h2>
+      <p style="color:rgba(255,255,255,0.65);font-size:15px;margin-bottom:28px">Cuéntenos y le preparamos una cotización personalizada con los materiales que necesita.</p>
+      <a href="contacto.html" class="btn btn-primary">Solicitar cotización →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-main"><div class="container"><div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo"><div class="nav-logo-icon"><svg viewBox="0 0 28 24" fill="none"><polygon points="0,24 14,2 28,24" stroke="#B95A3E" stroke-width="2.5" fill="none"/><rect x="0" y="21" width="28" height="3" fill="#B95A3E"/></svg></div><div class="nav-logo-text"><div class="name">COMINAGRO</div><div class="sub">Mina Las Terrazas</div></div></a>
+      <p>Empresa nariñense dedicada a la extracción y comercialización de materiales de construcción.</p>
+      <p class="footer-tagline">Más de <strong>27 años</strong> construyendo contigo</p>
+    </div>
+    <div class="footer-col"><h4>Navegación</h4><a href="index.html">Inicio</a><a href="nosotros.html">Nosotros</a><a href="productos.html">Productos</a><a href="proyectos.html">Proyectos</a><a href="contacto.html">Contacto</a></div>
+    <div class="footer-col"><h4>Productos</h4><a href="productos.html#prefabricados">Prefabricados</a><a href="productos.html#bloques">Bloques</a><a href="productos.html#ladrillera">Ladrillera</a><a href="productos.html#mineria">Minería</a></div>
+    <div class="footer-col"><h4>Contáctanos</h4>
+      <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Km 4 Vía al Sur, Pasto, Nariño</span></div>
+      <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.01 1.16 2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg><span>317 513 1773 | 317 403 0677</span></div>
+      <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>ventas-cominagro@hotmail.com</span></div>
+    </div>
+  </div></div></div>
+  <div class="container"><div class="footer-bottom"><p>© 2024 Cominagro S.A.S – Todos los derechos reservados.</p><span>Diseñado por <a href="mailto:eduandresalvarezgamba@gmail.com">Eduardo Andres Alvarez Gamba</a></span></div></div>
+</footer>
+<a href="https://wa.me/573175131773" class="wsp-float" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.304A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+<script src="js/main.js"></script>
+</body>
+</html>

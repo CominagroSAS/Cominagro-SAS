@@ -1,0 +1,264 @@
+/* ── NAVBAR ── */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: var(--blanco);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  transition: box-shadow var(--transition);
+}
+
+.scrolled {
+  box-shadow: var(--shadow);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 110px;
+  gap: 32px;
+}
+
+/* ── LOGO ── */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.logoIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: var(--negro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logoIcon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoName {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--negro);
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.logoSub {
+  font-size: 10px;
+  color: var(--terracota);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+
+/* ── LINKS DESKTOP ── */
+.links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.link {
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gris);
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+}
+
+.link:hover {
+  color: var(--negro);
+}
+
+.active {
+  color: var(--negro);
+}
+
+.active::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 14px;
+  right: 14px;
+  height: 2px;
+  background: var(--terracota);
+  border-radius: 2px;
+}
+
+/* ── DROPDOWN ── */
+.dropdown {
+  position: relative;
+}
+
+.chevron {
+  transition: transform var(--transition);
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: var(--blanco);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  min-width: 200px;
+  padding: 8px;
+  z-index: 100;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  font-size: 13px;
+  color: var(--gris);
+  transition: all var(--transition);
+}
+
+.dropdownItem:hover {
+  background: var(--fondo);
+  color: var(--negro);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background: var(--terracota);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── CTA DESKTOP ── */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--terracota);
+  color: var(--blanco);
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 600;
+  flex-shrink: 0;
+  transition: all var(--transition);
+}
+
+.cta:hover {
+  background: var(--terracota-d);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(185,90,62,0.35);
+}
+
+/* ── HAMBURGER ── */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--negro);
+  padding: 4px;
+  cursor: pointer;
+}
+
+/* ── MOBILE MENU ── */
+.mobileMenu {
+  position: fixed;
+  top: 90px;
+  left: 0; right: 0; bottom: 0;
+  background: var(--blanco);
+  z-index: 999;
+  padding: 24px;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform var(--transition);
+}
+
+.mobileOpen {
+  transform: translateX(0);
+}
+
+.mobileLink {
+  display: block;
+  padding: 16px 0;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Barlow Condensed', sans-serif;
+  color: var(--negro);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  letter-spacing: 0.5px;
+  transition: color var(--transition);
+}
+
+.mobileLink:hover,
+.mobileLinkActive {
+  color: var(--terracota);
+}
+
+.mobileSub {
+  display: block;
+  padding: 10px 0 10px 16px;
+  font-size: 14px;
+  color: var(--gris);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  transition: color var(--transition);
+}
+
+.mobileSub:hover {
+  color: var(--terracota);
+}
+
+.mobileCta {
+  display: block;
+  margin-top: 24px;
+  padding: 14px;
+  background: var(--terracota);
+  color: var(--blanco);
+  text-align: center;
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 700;
+  transition: background var(--transition);
+}
+
+.mobileCta:hover {
+  background: var(--terracota-d);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .links { display: none; }
+  .cta   { display: none; }
+  .hamburger { display: flex; }
+}
+
+.logoImg {
+  height: 110px;
+  width: auto;
+  object-fit: contain;
+}
