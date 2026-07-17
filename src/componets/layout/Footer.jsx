@@ -5,7 +5,7 @@ import styles from './Footer.module.css'
 const Logo = () => (
   <Link to="/" className={styles.logo}>
     <img
-      src="/cominagro-logo.jpg"
+      src="/LOGO.PNG"
       alt="Cominagro S.A.S"
       className={styles.logoImg}
     />
