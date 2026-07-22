@@ -44,7 +44,7 @@ export default function Nosotros() {
           <div className={styles.split}>
             <div className={styles.imgWrap}>
               <img
-                src="public\cominagro-nosotros.jpg"
+                src="/cominagro-nosotros.jpg"
                 alt="Mina Las Terrazas"
                 className={styles.img}
               />
