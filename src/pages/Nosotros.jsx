@@ -44,7 +44,7 @@ export default function Nosotros() {
           <div className={styles.split}>
             <div className={styles.imgWrap}>
               <img
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80"
+                src="public\cominagro-nosotros.jpg"
                 alt="Mina Las Terrazas"
                 className={styles.img}
               />
@@ -56,13 +56,19 @@ export default function Nosotros() {
             <div className={styles.text}>
               <span className={styles.tag}>Quiénes somos</span>
               <h2>Una empresa con <em>raíces en Nariño</em></h2>
-              <p>Cominagro S.A.S. – Mina y Ladrillera Las Terrazas es una empresa familiar fundada en Nariño, dedicada a la extracción y comercialización de materiales de construcción de alta calidad.</p>
-              <p>Producimos arena negra, arena blanca, granzón, bloques en arcilla, ladrillos y adoquines; todos con estándares propios que garantizan durabilidad y rendimiento en cada obra.</p>
-              <p>Nuestra razón de ser va más allá del negocio: <strong>Juntos construimos un Nariño mejor.</strong></p>
+              <p>Cominagro S.A.S. es una empresa que construye confianza desde hace más de 27 años, producimos, extraemos y comercializamos materiales de construcción de alta calidad para proyectos de vivienda, infraestructura, urbanismo e industria.
+              Nuestra operación integra tres unidades estratégicas: </p>
+              <p>🏗️ Prefabricados</p>
+              <p>Bloques de concreto y adoquines.</p>
+              <p>⛰️ Mina</p>
+              <p>Arena negra, arena blanca y granzón.</p>
+              <p>🧱 Ladrillera</p>
+              <p>Ladrillo farol para divisiones y ladrillo visto.</p>
+              <p>Cada uno de nuestros productos es elaborado bajo estándares propios de calidad, garantizando resistencia, durabilidad y el respaldo de una empresa con más de dos décadas de experiencia al servicio de la construcción.</p>
               <div className={styles.counters}>
                 <div className={styles.counter}>
-                  <span className={styles.counterN}>+27</span>
-                  <span className={styles.counterL}>Años de experiencia</span>
+                  <span className={styles.counterN}>+9</span>
+                  <span className={styles.counterL}>Proyectos completados</span>
                 </div>
                 <div className={styles.counter}>
                   <span className={styles.counterN}>+500</span>
