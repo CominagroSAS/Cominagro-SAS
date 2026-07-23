@@ -127,32 +127,22 @@
   margin-top: 2px;
 }
 
-/* ── MAP ── */
-.mapPlaceholder {
-  background: var(--fondo);
+/* ── MAP CONTAINER ── */
+.mapContainer {
+  width: 100%;
+  height: 200px;
   border-radius: var(--radius);
-  height: 160px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  color: var(--gris);
-  font-size: 13px;
-  margin-top: 8px;
-  cursor: pointer;
-  transition: all var(--transition);
-  border: 1px dashed var(--gris-claro);
+  overflow: hidden;
+  margin-top: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
-.mapPlaceholder:hover {
-  background: var(--fondo-card);
-  color: var(--terracota);
-  border-color: var(--terracota);
-}
-
-.mapPlaceholder svg {
-  color: var(--terracota);
+.mapContainer iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
 }
 
 /* ── WHATSAPP BTN ── */
@@ -167,6 +157,7 @@
   border-radius: var(--radius);
   font-size: 15px;
   font-weight: 700;
+  text-decoration: none;
   transition: all var(--transition);
 }
 

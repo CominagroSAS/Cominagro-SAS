@@ -1,0 +1,44 @@
+/* ── WHATSAPP FLOTANTE ── */
+.wspFloat {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 900;
+  width: 64px;          
+  height: 64px;         
+  border-radius: 50%;
+  background: #25D366;
+  color: var(--blanco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+  transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+  animation: pulseWsp 2.5s infinite;
+  text-decoration: none; 
+}
+
+.wspFloat:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 28px rgba(37,211,102,0.6);
+  background: #1ea855;
+}
+
+@keyframes pulseWsp {
+  0%, 100% {
+    box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+  }
+  50% {
+    box-shadow: 0 4px 32px rgba(37,211,102,0.7),
+                0 0 0 10px rgba(37,211,102,0.15); 
+  }
+}
+
+@media (max-width: 768px) {
+  .wspFloat {
+    bottom: 20px;
+    right: 20px;
+    width: 56px;        
+    height: 56px;       
+  }
+}

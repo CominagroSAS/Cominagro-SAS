@@ -72,8 +72,7 @@ export default function Contacto() {
                   </div>
                   <div className={styles.detTxt}>
                     <h5>Teléfonos</h5>
-                    <p>317 513 1773</p>
-                    <small>317 403 0677</small>
+                    <p>317 5017359</p>
                   </div>
                 </div>
 
@@ -98,15 +97,23 @@ export default function Contacto() {
                   </div>
                 </div>
 
-                <div className={styles.mapPlaceholder}>
-                  <RiMapPin2Line size={32} />
-                  <span>Ver en Google Maps</span>
+                {/* MAPA GOOGLE EMBED */}
+                <div className={styles.mapContainer}>
+                  <iframe
+                    title="Ubicación Cominagro Las Terrazas"
+                    src="https://maps.google.com/maps?q=Mina%20Ladrillera%20y%20Prefabricados%20Las%20Terrazas%20Cominagro%20SAS%20Pasto&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
                 </div>
               </div>
 
-              {/* CORRECCIÓN AQUÍ: Se añadió la etiqueta de apertura <a */}
               <a 
-                href={'https://wa.me/573175131773?text=Hola%20Cominagro%2C%20quisiera%20cotizar'}
+                href={'https://wa.me/573175017359?text=Hola%20Cominagro%2C%20quisiera%20cotizar'}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.wspBtn}

@@ -1,0 +1,276 @@
+/* ── SECCIÓN ── */
+.section {
+  background: var(--fondo);
+}
+
+/* ── HEAD ── */
+.head {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.tag {
+  display: block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--terracota);
+  margin-bottom: 10px;
+}
+
+.title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  color: var(--negro);
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.title em {
+  color: var(--terracota);
+  font-style: normal;
+}
+
+/* ── RATING CARD ── */
+.ratingWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.ratingCard {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  background: var(--blanco);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: var(--radius-lg);
+  padding: 20px 32px;
+  box-shadow: var(--shadow);
+}
+
+.ratingLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.ratingN {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 52px;
+  font-weight: 800;
+  color: var(--negro);
+  line-height: 1;
+}
+
+.ratingTotal {
+  font-size: 12px;
+  color: var(--gris);
+  margin-top: 2px;
+}
+
+.ratingDivider {
+  width: 1px;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.ratingRight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.googleLogo {
+  display: block;
+}
+
+.googleText {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--negro);
+  letter-spacing: 0.5px;
+}
+
+.googleSub {
+  font-size: 11px;
+  color: var(--gris);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ── ESTRELLAS ── */
+.estrellas {
+  display: flex;
+  gap: 2px;
+}
+
+.estrella {
+  color: #fbbc05;
+}
+
+.estrellaVacia {
+  color: var(--gris-claro);
+}
+
+/* ── GRID (DESKTOP) ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+/* ── CARD ── */
+.card {
+  background: var(--blanco);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: var(--shadow);
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(185, 90, 62, 0.15);
+}
+
+/* ── CARD TOP ── */
+.cardTop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--blanco);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cardInfo {
+  flex: 1;
+}
+
+.nombre {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--negro);
+  line-height: 1.2;
+}
+
+.meta {
+  font-size: 11px;
+  color: var(--gris);
+  margin-top: 2px;
+}
+
+.googleIcon {
+  flex-shrink: 0;
+}
+
+/* ── TEXTO ── */
+.texto {
+  font-size: 13px;
+  color: var(--gris);
+  line-height: 1.65;
+  flex: 1;
+}
+
+/* ── VER MÁS ── */
+.verMas {
+  text-align: center;
+}
+
+.verMasBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: var(--blanco);
+  color: var(--azul);
+  border: 2px solid var(--azul);
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 700;
+  transition: all var(--transition);
+}
+
+.verMasBtn:hover {
+  background: var(--azul);
+  color: var(--blanco);
+  transform: translateY(-1px);
+}
+
+/* ── CARRUSEL MÓVIL (OCULTO EN DESKTOP) ── */
+.carrusel {
+  display: none;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .ratingCard {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .ratingDivider {
+    width: 60px;
+    height: 1px;
+  }
+
+  /* Ocultar Grid en Móvil */
+  .grid {
+    display: none;
+  }
+
+  /* Mostrar Carrusel Táctil Limpio */
+  .carrusel {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 4px 4px 16px 4px;
+    margin-bottom: 24px;
+
+    /* Ocultar barra de scroll nativa */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+
+  .carrusel::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  .carruselItem {
+    flex: 0 0 88%; /* Muestra el 88% de la tarjeta para dejar ver el borde de la siguiente */
+    scroll-snap-align: center;
+  }
+}
