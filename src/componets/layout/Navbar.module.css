@@ -1,11 +1,14 @@
 /* ── NAVBAR ── */
 .navbar {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0; 
+  left: 0; 
+  right: 0;
   z-index: 1000;
   background: var(--blanco);
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   transition: box-shadow var(--transition);
+  padding: 8px 0; /* Un pequeño acolchado para evitar que el logo toque los bordes */
 }
 
 .scrolled {
@@ -16,7 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60;
+  min-height: 80px; /* Se corrige el valor sin unidad y se le da espacio adecuado */
   gap: 32px;
 }
 
@@ -26,6 +29,13 @@
   align-items: center;
   gap: 12px;
   flex-shrink: 0;
+}
+
+.logoImg {
+  height: 75px; /* Ajuste óptimo para no deformar el Navbar */
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .logoIcon {
@@ -123,7 +133,7 @@
   top: calc(100% + 8px);
   left: 0;
   background: var(--blanco);
-  border: 1px solid rgba(0,0,0,0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   min-width: 200px;
@@ -173,7 +183,7 @@
 .cta:hover {
   background: var(--terracota-d);
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(185,90,62,0.35);
+  box-shadow: 0 6px 20px rgba(185, 90, 62, 0.35);
 }
 
 /* ── HAMBURGER ── */
@@ -189,8 +199,10 @@
 /* ── MOBILE MENU ── */
 .mobileMenu {
   position: fixed;
-  top: 90px;
-  left: 0; right: 0; bottom: 0;
+  top: 96px; /* Se alineó a la nueva altura real del Navbar */
+  left: 0; 
+  right: 0; 
+  bottom: 0;
   background: var(--blanco);
   z-index: 999;
   padding: 24px;
@@ -210,7 +222,7 @@
   font-weight: 700;
   font-family: 'Barlow Condensed', sans-serif;
   color: var(--negro);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   letter-spacing: 0.5px;
   transition: color var(--transition);
 }
@@ -225,7 +237,7 @@
   padding: 10px 0 10px 16px;
   font-size: 14px;
   color: var(--gris);
-  border-bottom: 1px solid rgba(0,0,0,0.04);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
   transition: color var(--transition);
 }
 
@@ -255,10 +267,16 @@
   .links { display: none; }
   .cta   { display: none; }
   .hamburger { display: flex; }
-}
-
-.logoImg {
-  height: 90px;
-  width: auto;
-  object-fit: contain;
+  
+  .logoImg {
+    height: 60px; /* Ligeramente más pequeño en móviles para ahorrar espacio vertical */
+  }
+  
+  .inner {
+    min-height: 65px;
+  }
+  
+  .mobileMenu {
+    top: 81px; /* Ajuste para el alto de la barra en versión móvil */
+  }
 }
