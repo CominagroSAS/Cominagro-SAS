@@ -37,16 +37,26 @@
 .divider {
   width: 1px;
   height: 32px;
-  background: rgba(255,255,255,0.25);
+  background: rgba(255, 255, 255, 0.25);
 }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
-  .divider { display: none; }
+  .divider { 
+    display: none; 
+  }
+
+  .inner {
+    justify-content: flex-start; /* Alinea los elementos al inicio (izquierda) */
+    gap: 16px 8px; /* Espaciado entre filas y columnas */
+    padding: 0 8px;
+  }
 
   .item {
-    min-width: 45%;
+    flex: 1 1 42%; /* Ocupa casi la mitad para forzar filas de 2 */
+    max-width: 50%;
     align-items: flex-start;
     text-align: left;
+    padding: 4px 8px;
   }
 }

@@ -1,11 +1,12 @@
+import React from 'react'
 import styles from './StatsBar.module.css'
 
 const items = [
-  { label: 'Arena Negra',   sub: 'Mezclas y morteros' },
-  { label: 'Arena Blanca',  sub: 'Acabados finos' },
-  { label: 'Granzón',       sub: 'Base y rellenos' },
-  { label: 'Bloques',       sub: 'Arcilla y prefabricados' },
-  { label: 'Adoquines',     sub: 'Pisos y vías' },
+  { label: 'Arena Negra',  sub: 'Mezclas y morteros' },
+  { label: 'Arena Blanca', sub: 'Acabados finos' },
+  { label: 'Granzón',      sub: 'Base y rellenos' },
+  { label: 'Bloques',      sub: 'Arcilla y prefabricados' },
+  { label: 'Adoquines',    sub: 'Pisos y vías' },
 ]
 
 export default function StatsBar() {
@@ -14,15 +15,15 @@ export default function StatsBar() {
       <div className="container">
         <div className={styles.inner}>
           {items.map((item, i) => (
-            <>
-              <div key={item.label} className={styles.item}>
+            <React.Fragment key={item.label}>
+              <div className={styles.item}>
                 <span className={styles.label}>{item.label}</span>
                 <span className={styles.sub}>{item.sub}</span>
               </div>
               {i < items.length - 1 && (
-                <div key={`div-${i}`} className={styles.divider} />
+                <div className={styles.divider} />
               )}
-            </>
+            </React.Fragment>
           ))}
         </div>
       </div>
