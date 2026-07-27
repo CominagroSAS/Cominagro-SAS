@@ -1,7 +1,7 @@
 /* ── PAGE HERO ── */
 .pageHero {
   background: var(--negro);
-  padding: 130px 0 60px;
+  padding: 110px 0 40px;
   position: relative;
   overflow: hidden;
 }
@@ -30,11 +30,11 @@
 
 .pageHero h1 {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(32px, 5vw, 56px);
+  font-size: clamp(28px, 4vw, 44px);
   font-weight: 800;
   color: var(--blanco);
   line-height: 1.05;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .pageHero h1 em {
@@ -43,7 +43,7 @@
 }
 
 .pageHero p {
-  font-size: 16px;
+  font-size: 14px;
   color: rgba(255,255,255,0.65);
   max-width: 540px;
   line-height: 1.6;
