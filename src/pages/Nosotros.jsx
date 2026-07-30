@@ -21,7 +21,7 @@ const ventajas = [
   { icon: '✅', title: 'Materiales certificados', desc: 'Cumplimos normas colombianas de construcción. Control de calidad en cada proceso.' },
   { icon: '🚚', title: 'Despacho a obra', desc: 'Entregamos donde usted necesite dentro de la región. Flota propia para cumplir tiempos.' },
   { icon: '🤝', title: 'Asesoría personalizada', desc: 'Le ayudamos a elegir el material correcto. Atención directa, sin intermediarios.' },
-  { icon: '💲', title: 'Precios directos de mina', desc: 'Al ser productores directos, ofrecemos los mejores precios del mercado.' },
+  { icon: '💲', title: 'Precios directos', desc: 'Al ser productores directos, ofrecemos los mejores precios del mercado.' },
 ]
 
 export default function Nosotros() {

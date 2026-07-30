@@ -558,22 +558,56 @@ export const productos = [
       origen: 'Mina Las Terrazas',
     },
   },
-  {
-    id: 'maquinaria',
-    category: 'maquinaria',
-    title: 'Maquinaria',
-    desc: 'Equipos propios de extracción y producción que garantizan calidad constante en todos nuestros materiales.',
-    uso: 'muro',
-    imgs: [
-      '/productos/maquinaria/maquinaria1.png',
-      '/productos/maquinaria/maquinaria2.png',
-      '/productos/maquinaria/maquinaria3.png',
-    ],
-    ficha: {
-      capacidad: 'Industrial',
-      origen: 'Producción propia',
-    },
-  },
+  // 1. Cargador Frontal (Máquina 1 - Imagen adjunta)
+{
+  id: 'cargador',
+  category: 'maquinaria',
+  title: 'Cargador',
+  desc: 'Maquinaria de gran capacidad para la manipulación, acopio de materiales y movimiento eficiente de agregados en mina.',
+  uso: 'Cargue y acopio de material',
+  imgs: [
+    '/productos/maquinaria/maquinaria1.png',
+  ],
+  /*
+  ficha: {
+    capacidad: 'Industrial',
+    origen: 'Flota propia',
+  },*/
+},
+
+// 2. Retroexcavadora 210 sobre llantas
+{
+  id: 'retroexcavadora-210-llantas',
+  category: 'maquinaria',
+  title: 'Retroexcavadora 210 (Llantas)',
+  desc: 'Equipo de alta movilidad destinado a los procesos de producción, cargue continuo de material y atención rápida de despachos.',
+  uso: 'Producción y despachos',
+  imgs: [
+    '/productos/maquinaria/maquinaria2.png',
+  ],
+  /*
+  ficha: {
+    capacidad: 'Alto rendimiento',
+    movilidad: 'Llantas / Neumáticos',
+  },*/
+},
+
+// 3. Excavadora 320 sobre orugas
+{
+  id: 'excavadora-320-orugas',
+  category: 'maquinaria',
+  title: 'Excavadora 320 (Orugas)',
+  desc: 'Maquinaria pesada especializada en labores de descapote, preparación técnica del terreno y extracción directa.',
+  uso: 'Descapote y extracción pesada',
+  imgs: [
+    '/productos/maquinaria/maquinaria3.png',
+  ],
+  /*
+  ficha: {
+    terreno: 'Orugas para alta tracción',
+    funcion: 'Descapote y minería',
+  },*/
+},
 ]
 
 export const categorias = [

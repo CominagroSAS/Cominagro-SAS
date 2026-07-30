@@ -86,19 +86,23 @@ function ProductCard({ producto: p }) {
           <p>{p.desc}</p>
         </div>
 
-        {/* Ficha técnica toggle */}
-        <button
-          className={styles.fichaToggle}
-          onClick={() => setShowFicha(!showFicha)}
-        >
-          {showFicha ? 'Ocultar ficha técnica ▲' : 'Ver ficha técnica ▼'}
-        </button>
-
-        {showFicha && <FichaTecnica ficha={p.ficha} />}
-
-        <Link to="/contacto" className={styles.cta}>
-          Solicitar cotización <RiArrowRightLine size={14} />
-        </Link>
+        {/* Ficha técnica toggle — solo si el producto tiene ficha */}
+        {p.ficha && (
+          <>
+            <button
+              className={styles.fichaToggle}
+              onClick={() => setShowFicha(!showFicha)}
+            >
+              {showFicha ? 'Ocultar ficha técnica ▲' : 'Ver ficha técnica ▼'}
+            </button>
+            {showFicha && <FichaTecnica ficha={p.ficha} />}
+          </>
+        )}
+        {p.category !== 'maquinaria' && (
+          <Link to="/contacto" className={styles.cta}>
+            Solicitar cotización <RiArrowRightLine size={14} />
+          </Link>
+        )}
       </div>
 
     </div>
