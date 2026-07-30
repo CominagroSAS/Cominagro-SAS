@@ -82,12 +82,14 @@ export default function Footer() {
       <div className="container">
         <div className={styles.bottom}>
           <p>© 2024 Cominagro S.A.S – Todos los derechos reservados.</p>
+          {/* 
           <span>
             Diseñado por{' '}
             <a href="mailto:eduandresalvarezgamba@gmail.com">
               Eduardo Andres Alvarez Gamba
             </a>
           </span>
+          */}
         </div>
       </div>
     </footer>

@@ -58,16 +58,13 @@ export default function Nosotros() {
               <h2>Una empresa con <em>raíces en Nariño</em></h2>
               <p>Cominagro S.A.S. es una empresa que construye confianza desde hace más de 27 años, producimos, extraemos y comercializamos materiales de construcción de alta calidad para proyectos de vivienda, infraestructura, urbanismo e industria.
               Nuestra operación integra tres unidades estratégicas: </p>
-              <p>🏗️ Prefabricados</p>
-              <p>Bloques de concreto y adoquines.</p>
-              <p>⛰️ Mina</p>
-              <p>Arena negra, arena blanca y granzón.</p>
-              <p>🧱 Ladrillera</p>
-              <p>Ladrillo farol para divisiones y ladrillo visto.</p>
+              <p>🏗️ Prefabricados,Bloques de concreto y adoquines.</p>
+              <p>⛰️ Mina: Arena negra, arena blanca y granzón.</p>
+              <p>🧱 Ladrillera: Ladrillo farol para divisiones y ladrillo visto.</p>
               <p>Cada uno de nuestros productos es elaborado bajo estándares propios de calidad, garantizando resistencia, durabilidad y el respaldo de una empresa con más de dos décadas de experiencia al servicio de la construcción.</p>
               <div className={styles.counters}>
                 <div className={styles.counter}>
-                  <span className={styles.counterN}>+9</span>
+                  <span className={styles.counterN}>+300</span>
                   <span className={styles.counterL}>Proyectos completados</span>
                 </div>
                 <div className={styles.counter}>
@@ -75,8 +72,8 @@ export default function Nosotros() {
                   <span className={styles.counterL}>Clientes atendidos</span>
                 </div>
                 <div className={styles.counter}>
-                  <span className={styles.counterN}>8</span>
-                  <span className={styles.counterL}>Municipios cubiertos</span>
+                  <span className={styles.counterN}>+20</span>
+                  <span className={styles.counterL}>Municipios aledaños</span>
                 </div>
               </div>
             </div>
