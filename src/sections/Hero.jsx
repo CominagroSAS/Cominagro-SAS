@@ -74,7 +74,7 @@ export default function Hero() {
               desde nuestra mina en Nariño.
             </p>
 
-            <p className={styles.italics}>
+            <p className={styles.sub}>
               Más de <strong>27 años</strong> construyendo contigo
             </p>
 
@@ -105,10 +105,12 @@ export default function Hero() {
         </div>
       </div>
 
+
+{/* 
       <div className={styles.scroll}>
         <RiArrowDownLine size={20} />
         <span>SCROLL</span>
-      </div>
+      </div>*/}
     </section>
   )
 }

@@ -46,7 +46,7 @@ export default function Proyectos() {
       </div>
 
       {/* PROYECTOS */}
-      <section className={`${styles.section} section`}>
+      <section className={`${styles.section} ${styles.sectionFirst} section`}>
         <div className="container">
 
           {/* Filtros */}

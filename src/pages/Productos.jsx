@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Link, useSearchParams } from 'react-router-dom'
 import { RiArrowRightLine, RiArrowLeftSLine, RiArrowRightSLine } from 'react-icons/ri'
 import { productos, categorias, usoLabels } from '../data/productos'
 import styles from './Productos.module.css'
@@ -59,7 +59,6 @@ function ProductCard({ producto: p }) {
   return (
     <div className={styles.card} id={p.id}>
 
-      {/* Imagen */}
       <div className={styles.imgWrap}>
         <img src={p.imgs[imgIndex]} alt={p.title} loading="lazy" />
 
@@ -78,7 +77,6 @@ function ProductCard({ producto: p }) {
         )}
       </div>
 
-      {/* Body */}
       <div className={styles.body}>
         <div className={styles.bodyTop}>
           <UsoBadge uso={p.uso} />
@@ -86,7 +84,6 @@ function ProductCard({ producto: p }) {
           <p>{p.desc}</p>
         </div>
 
-        {/* Ficha técnica toggle — solo si el producto tiene ficha */}
         {p.ficha && (
           <>
             <button
@@ -98,6 +95,7 @@ function ProductCard({ producto: p }) {
             {showFicha && <FichaTecnica ficha={p.ficha} />}
           </>
         )}
+
         {p.category !== 'maquinaria' && (
           <Link to="/contacto" className={styles.cta}>
             Solicitar cotización <RiArrowRightLine size={14} />
@@ -110,7 +108,19 @@ function ProductCard({ producto: p }) {
 }
 
 export default function Productos() {
-  const [filtro, setFiltro] = useState('all')
+  const [searchParams] = useSearchParams()
+  const filtroParam = searchParams.get('filtro') || 'all'
+  const [filtro, setFiltro] = useState(filtroParam)
+
+  useEffect(() => {
+    const param = searchParams.get('filtro')
+    if (param) {
+      setFiltro(param)
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    } else {
+      setFiltro('all')
+    }
+  }, [searchParams])
 
   const productosFiltrados = filtro === 'all'
     ? productos
@@ -118,7 +128,6 @@ export default function Productos() {
 
   return (
     <>
-      {/* PAGE HERO */}
       <section className={styles.pageHero}>
         <div className="container">
           <div className={styles.breadcrumb}>
@@ -129,11 +138,9 @@ export default function Productos() {
         </div>
       </section>
 
-      {/* PRODUCTOS */}
-      <section className={`${styles.section} section`}>
+      <section className={`${styles.section} ${styles.sectionFirst} section`}>
         <div className="container">
 
-          {/* Filtros */}
           <div className={styles.filterBar}>
             {categorias.map(f => (
               <button
@@ -146,12 +153,10 @@ export default function Productos() {
             ))}
           </div>
 
-          {/* Contador */}
           <p className={styles.count}>
             Mostrando <strong>{productosFiltrados.length}</strong> producto{productosFiltrados.length !== 1 ? 's' : ''}
           </p>
 
-          {/* Grid */}
           <div className={styles.grid}>
             {productosFiltrados.map(p => (
               <ProductCard key={p.id} producto={p} />
@@ -161,7 +166,6 @@ export default function Productos() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className={styles.ctaSection}>
         <div className="container">
           <div className={styles.ctaInner}>

@@ -6,7 +6,7 @@
 /* ── PAGE HERO ── */
 .pageHero {
   background: var(--negro);
-  padding: 130px 0 60px;
+  padding: 100px 0 25px;
   position: relative;
   overflow: hidden;
 }
@@ -440,4 +440,8 @@
 @media (max-width: 768px) {
   .grid { grid-template-columns: 1fr; }
   .filterBar { gap: 6px; }
+}
+
+.sectionFirst {
+  padding-top: 35px;
 }

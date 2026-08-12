@@ -39,7 +39,7 @@ export default function Nosotros() {
       </section>
 
       {/* QUIÉNES SOMOS */}
-      <section className={`${styles.section} section`}>
+      <section className={`${styles.section} ${styles.sectionFirst} section`}>
         <div className="container">
           <div className={styles.split}>
             <div className={styles.imgWrap}>

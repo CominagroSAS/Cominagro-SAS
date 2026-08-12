@@ -46,7 +46,7 @@ export default function Contacto() {
       </section>
 
       {/* CONTENIDO */}
-      <section className={`${styles.section} section`}>
+      <section className={`${styles.section} ${styles.sectionFirst} section`}>
         <div className="container">
           <div className={styles.grid}>
 

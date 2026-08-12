@@ -1,7 +1,7 @@
 /* ── PAGE HERO ── */
 .pageHero {
   background: var(--negro);
-  padding: 110px 0 40px;
+  padding: 100px 0 25px;
   position: relative;
   overflow: hidden;
 }
@@ -448,4 +448,8 @@
 
 @media (max-width: 480px) {
   .valoresGrid { grid-template-columns: 1fr; }
+}
+
+.sectionFirst {
+  padding-top: 35px;
 }

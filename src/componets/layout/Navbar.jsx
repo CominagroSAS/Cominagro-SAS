@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { RiMenu3Line, RiCloseLine, RiFileTextLine, RiArrowDownSLine } from 'react-icons/ri'
 import styles from './Navbar.module.css'
@@ -20,10 +20,11 @@ const navLinks = [
     label: 'Productos',
     to: '/productos',
     dropdown: [
-      { to: '/productos#prefabricados', label: 'Prefabricados' },
-      { to: '/productos#bloques',       label: 'Bloques en Arcilla' },
-      { to: '/productos#ladrillera',    label: 'Ladrillera' },
-      { to: '/productos#mineria',       label: 'Minería' },
+      { to: '/productos', filter: 'prefabricados', label: 'Prefabricados' },
+      { to: '/productos', filter: 'bloques',       label: 'Bloques' },
+      { to: '/productos', filter: 'ladrillera',    label: 'Ladrillera' },
+      { to: '/productos', filter: 'mineria',       label: 'Minería' },
+      { to: '/productos', filter: 'maquinaria',    label: 'Maquinaria' },
     ],
   },
   { to: '/proyectos', label: 'Proyectos' },
@@ -34,6 +35,7 @@ export default function Navbar() {
   const [scrolled,     setScrolled]     = useState(false)
   const [menuOpen,     setMenuOpen]     = useState(false)
   const [dropdownOpen, setDropdownOpen] = useState(false)
+  const dropdownTimeout = React.useRef(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -57,8 +59,15 @@ export default function Navbar() {
                   <div
                     key={link.label}
                     className={styles.dropdown}
-                    onMouseEnter={() => setDropdownOpen(true)}
-                    onMouseLeave={() => setDropdownOpen(false)}
+                    onMouseEnter={() => {
+                      clearTimeout(dropdownTimeout.current)
+                      setDropdownOpen(true)
+                    }}
+                    onMouseLeave={() => {
+                      dropdownTimeout.current = setTimeout(() => {
+                        setDropdownOpen(false)
+                      }, 300)
+                    }}
                   >
                     <NavLink
                       to={link.to}
@@ -75,11 +84,16 @@ export default function Navbar() {
                     {dropdownOpen && (
                       <div className={styles.dropdownMenu}>
                         {link.dropdown.map(item => (
-                          <Link key={item.to} to={item.to} className={styles.dropdownItem}>
-                            <span className={styles.dot} />
-                            {item.label}
-                          </Link>
-                        ))}
+                          <Link
+                          key={item.filter}
+                          to={`/productos?filtro=${item.filter}`}
+                          className={styles.dropdownItem}
+                          onClick={() => setDropdownOpen(false)}
+                          >
+                          <span className={styles.dot} />
+                          {item.label}
+                        </Link>
+                       ))}
                       </div>
                     )}
                   </div>
