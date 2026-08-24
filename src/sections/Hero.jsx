@@ -70,8 +70,7 @@ export default function Hero() {
             </h1>
 
             <p className={styles.sub}>
-              Arena, bloques, adoquines y ladrillos directamente
-              desde nuestra mina en Nariño.
+              Prefabricados, mina y ladrillera
             </p>
 
             <p className={styles.sub}>

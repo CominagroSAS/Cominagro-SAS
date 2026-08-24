@@ -281,7 +281,7 @@ export const productos = [
     id: 'bloque-catalan',
     category: 'prefabricados',
     title: 'Bloque catalan',
-    desc: 'Bloque cerámico tradicional para fachadas exteriores.',
+    desc: 'Bloque de concreto tradicional para fachadas exteriores.',
     uso: 'fachadas',
     imgs: [
       '/prefabricados/bloque_catalan.png',
@@ -326,7 +326,7 @@ export const productos = [
   {
     id: 'farol-visto',
     category: 'ladrillera',
-    title: 'Farol visto',
+    title: 'Visto',
     desc: 'Ladrillo de arcilla para fachadas. Acabado rústico que aporta carácter y personalidad a la obra.',
     uso: 'fachada',
     imgs: [
@@ -343,7 +343,7 @@ export const productos = [
   {
     id: 'farol-estructural',
     category: 'ladrillera',
-    title: 'Farol Estructural',
+    title: 'Estructural',
     desc: 'Ladrillo de arcilla para muros estructurales y fachadas. Alta resistencia a la compresión.',
     uso: 'fachada',
     imgs: [
@@ -360,7 +360,7 @@ export const productos = [
   {
     id: 'farol-fachaleta',
     category: 'ladrillera',
-    title: 'Farol Fachaleta',
+    title: 'Fachaleta',
     desc: 'Pieza delgada de arcilla para revestimiento de fachadas. Acabado fino y estético.',
     uso: 'fachada',
     imgs: [
@@ -377,8 +377,8 @@ export const productos = [
   {
     id: 'farol-bloque-liso-8',
     category: 'ladrillera',
-    title: 'Farol Bloque Liso No. 8',
-    desc: 'Bloque farol liso para divisiones internas.',
+    title: 'Farol Liso No. 8',
+    desc: 'Ladrillo farol liso para divisiones internas y externas, evitando la utilización de pañete.',
     uso: 'divisiones',
     imgs: [
       '/ladrillera/farol_bloque_liso_n8.png',
@@ -394,8 +394,8 @@ export const productos = [
   {
     id: 'farol-bloque-liso-10',
     category: 'ladrillera',
-    title: 'Farol Bloque Liso No. 10',
-    desc: 'Ladrillo farol liso ideal para tabiquería.',
+    title: 'Farol Liso No. 10',
+    desc: 'Ladrillo farol liso para divisiones internas y externas, evitando la utilización de pañete.',
     uso: 'divisiones',
     imgs: [
       '/ladrillera/farol_bloque_liso_n10.png',
@@ -411,8 +411,8 @@ export const productos = [
   {
     id: 'farol-bloque-liso-12',
     category: 'ladrillera',
-    title: 'Farol Bloque Liso No. 12',
-    desc: 'Bloque hueco liso para muros divisorios.',
+    title: 'Farol Liso No. 12',
+    desc: 'Ladrillo farol liso para divisiones internas y externas, evitando la utilización de pañete.',
     uso: 'divisiones',
     imgs: [
       '/ladrillera/farol_bloque_liso_n12.png',
@@ -463,7 +463,7 @@ export const productos = [
     id: 'farol-estirado-8',
     category: 'ladrillera',
     title: 'Farol estirado No. 8',
-    desc: 'Bloque hueco estriado para tabiquería interna.',
+    desc: 'Ladrillo farol estriado para divisiones internas y externas.',
     uso: 'divisiones',
     imgs: [
       '/ladrillera/farol_estirado_n8.png',
@@ -476,7 +476,7 @@ export const productos = [
       peso: '5.4 kg',
     },
   },
-  /*
+  
   {
     id: 'farol-estirado-12',
     category: 'ladrillera',
@@ -494,7 +494,7 @@ export const productos = [
       peso: '7 kg',
     },
   },
-  */
+  
 
 
   // ─── MINERÍA ─────────────────────────────────
@@ -502,8 +502,8 @@ export const productos = [
     id: 'arena-negra',
     category: 'mineria',
     title: 'Arena Negra',
-    desc: 'Arena para mezclas de concreto, morteros y rellenos. Granulometría uniforme.',
-    uso: 'concreto',
+    desc: 'Ideal para concretos (fundición de vigas, columnas, cimentaciones y lozas).',
+    //uso: 'concreto',
     imgs: [
       '/mineria/arena_negra.png',
     ],
@@ -517,8 +517,8 @@ export const productos = [
     id: 'arena-blanca',
     category: 'mineria',
     title: 'Arena Blanca',
-    desc: 'Arena fina para pañetes y acabados. Textura suave y color uniforme.',
-    uso: 'mamposteria',
+    desc: 'Arena fina para pañetes y acabados. Textura suave .',
+    //uso: 'mamposteria',
     imgs: [
       '/mineria/arena_blanca.png',
     ],

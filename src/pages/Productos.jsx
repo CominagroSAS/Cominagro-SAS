@@ -134,7 +134,7 @@ export default function Productos() {
             Inicio <em>/ Productos</em>
           </div>
           <h1>Nuestros <em>Productos</em></h1>
-          <p>Materiales de construcción de alta calidad, extraídos y fabricados directamente en nuestra mina en Nariño.</p>
+          <p>Materiales de construcción de alta calidad, extraídos y fabricados directamente en nuestra empresa en Nariño.</p>
         </div>
       </section>
 

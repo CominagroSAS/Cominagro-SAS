@@ -92,8 +92,8 @@ export default function Contacto() {
                   </div>
                   <div className={styles.detTxt}>
                     <h5>Horario de atención</h5>
-                    <p>Lun – Vie: 7:00am – 5:00pm</p>
-                    <small>Sáb: 7:00am – 12:00m</small>
+                    <p>Lun – Vie: 7:30am a 11:30am - 1:30pm a 5:00pm</p>
+                    <small>Sáb: 7:30am – 12:00m</small>
                   </div>
                 </div>
 
@@ -187,6 +187,7 @@ export default function Contacto() {
                     <option value="" disabled>Seleccionar producto…</option>
                     <option value="Arena negra">Arena negra</option>
                     <option value="Arena blanca">Arena blanca</option>
+                    <option value="Recebo">Recebo</option>
                     <option value="Granzón">Granzón</option>
                     <option value="Bloques estructurales">Bloques estructurales</option>
                     <option value="Bloques no estructurales">Bloques no estructurales</option>

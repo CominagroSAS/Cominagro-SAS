@@ -7,7 +7,7 @@ const productos = [
   {
     id: 'adoquines',
     title: 'Adoquines',
-    desc: 'Adoquines para uso peatonal y vehicular. Alta resistencia a la carga y la intemperie.',
+    desc: 'Adoquines para uso peatonal y vehicular. Alta resistencia a la carga y el desgaste.',
     imgs: [
       '/productos/adoquines/adoquin1.png',
       '/productos/adoquines/adoquin2.png',
@@ -26,7 +26,7 @@ const productos = [
   {
     id: 'bloques',
     title: 'Bloques',
-    desc: 'Bloques estructurales y no estructurales fabricados con arcilla propia de la mina.',
+    desc: 'Bloques estructurales y no estructurales fabricados con agregados de alta calidad .',
     imgs: [
       '/productos/bloques/bloque1.png',
       '/productos/bloques/bloque2.png',
@@ -46,13 +46,13 @@ const productos = [
     ),
   },
   {
-    id: 'maquinaria',
-    title: 'Maquinaria',
-    desc: 'Equipos y maquinaria de extracción propios que garantizan producción constante y de calidad.',
+    id: 'ladrillera',
+    title: 'Ladrillera',
+    desc: 'Productos funcionales para divisiones internas, externas  y fachadas.',
     imgs: [
-      '/productos/maquinaria/maquinaria1.png',
-      '/productos/maquinaria/maquinaria2.png',
-      '/productos/maquinaria/maquinaria3.png',
+      '/ladrillera/farol_bloque_liso_n8.png',
+      '/ladrillera/farol_bloque_liso_n10.png',
+      '/ladrillera/farol_bloque_liso_n12.png',
     ],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -61,9 +61,9 @@ const productos = [
     ),
   },
   {
-    id: 'otros',
-    title: 'Arena y Materiales',
-    desc: 'Arena negra, blanca y granzón. Materiales de mina directamente para su construcción.',
+    id: 'agregados',
+    title: 'Agregados',
+    desc: 'Arena negra, blanca, recebo y granzón. Materiales para concretos, morteros y afirmado de pisos.',
     imgs: [
       '/productos/otros/otros1.png',
       '/productos/otros/otros2.png',

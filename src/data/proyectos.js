@@ -1,7 +1,7 @@
 export const proyectos = [
   {
     id: 1,
-    title: 'Parque El Panorámico',
+    title: 'Parque Panorámico',
     ubicacion: 'Pasto, Nariño',
     category: 'parques',
     img: '/proyectos/proyecto1.jpg',
@@ -26,6 +26,7 @@ export const proyectos = [
     materiales: ['Adoquín Peatonal', 'Gramoquín'],
     desc: 'Segunda fase de intervención del parque Morasurco. Continuación del diseño paisajístico con materiales Cominagro.',
   },
+  /*
   {
     id: 4,
     title: 'Parque El Panorámico II',
@@ -53,6 +54,7 @@ export const proyectos = [
     materiales: ['Adoquín Cuadrado Peatonal'],
     desc: 'Tercera fase del parque El Panorámico. Intervención de nuevas zonas con adoquín peatonal cuadrado Cominagro.',
   },
+  
   {
     id: 7,
     title: 'Parque Morasurco III',
@@ -71,8 +73,9 @@ export const proyectos = [
     materiales: ['Gramoquín', 'Adoquín Rectangular'],
     desc: 'Cuarta y última fase del parque Morasurco. Finalización del diseño paisajístico con gramoquín y adoquín rectangular.',
   },
+  */
   {
-    id: 9,
+    id: 4,
     title: 'Proyecto Estructural',
     ubicacion: 'Nariño, Colombia',
     category: 'edificios',

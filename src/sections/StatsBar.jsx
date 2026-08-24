@@ -2,11 +2,11 @@ import React from 'react'
 import styles from './StatsBar.module.css'
 
 const items = [
-  { label: 'Arena Negra',  sub: 'Mezclas y morteros' },
+  { label: 'Concretos y mezclas',  sub: 'Mezclas y morteros' },
   { label: 'Arena Blanca', sub: 'Acabados finos' },
   { label: 'Granzón',      sub: 'Base y rellenos' },
-  { label: 'Bloques',      sub: 'Arcilla y prefabricados' },
-  { label: 'Adoquines',    sub: 'Pisos y vías' },
+  { label: 'Ladrillos',      sub: 'Ladrillo visto y farol' },
+  { label: 'Adoquines',    sub: 'Bloques de concreto y adoquines' },
 ]
 
 export default function StatsBar() {

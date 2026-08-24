@@ -22,7 +22,7 @@ export default function Footer() {
             {/* Marca */}
             <div className={styles.brand}>
               <Logo />
-              <p>Empresa nariñense dedicada a la extracción y comercialización de materiales de construcción de alta calidad desde hace más de 27 años.</p>
+              <p>Empresa nariñense dedicada a la extracción y comercialización de materiales de construcción de alta calidad.</p>
               <p className={styles.tagline}>
                 Más de <strong>27 años</strong> construyendo contigo
               </p>
@@ -53,9 +53,8 @@ export default function Footer() {
             <div className={styles.col}>
               <h4>Productos</h4>
               <Link to="/productos#prefabricados">Prefabricados</Link>
-              <Link to="/productos#bloques">Bloques en Arcilla</Link>
+              <Link to="/productos#mineria">Mina</Link>
               <Link to="/productos#ladrillera">Ladrillera</Link>
-              <Link to="/productos#mineria">Minería</Link>
             </div>
 
             {/* Contacto */}

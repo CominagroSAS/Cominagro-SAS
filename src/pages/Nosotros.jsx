@@ -11,15 +11,14 @@ const valores = [
 
 const timeline = [
   { year: 'Años 90s', title: 'Fundación', desc: 'Inicio de operaciones como mina artesanal familiar en Nariño, abasteciendo proyectos locales.' },
-  { year: '2005', title: 'Apertura Ladrillera', desc: 'Incorporación de la Ladrillera Las Terrazas, ampliando el portafolio con bloques y ladrillos.' },
-  { year: '2012', title: 'Expansión regional', desc: 'Ampliación de cobertura a 8 municipios de Nariño. Flota de transporte propia.' },
-  { year: '2018', title: 'Constitución S.A.S.', desc: 'Formalización jurídica como Cominagro S.A.S. Inversión en maquinaria y procesos.' },
+  { year: '1995', title: 'Apertura Ladrillera', desc: 'Incorporación de la Ladrillera Las Terrazas, ampliando el portafolio con bloques y ladrillos.' },
+  { year: '2012', title: 'Expansión regional', desc: 'Ampliación de cobertura a varios municipios de Nariño. Flota de transporte propia.' },
   { year: '2024', title: 'Transformación digital', desc: 'Modernización de procesos comerciales y tecnológicos para seguir creciendo.' },
 ]
 
 const ventajas = [
   { icon: '✅', title: 'Materiales certificados', desc: 'Cumplimos normas colombianas de construcción. Control de calidad en cada proceso.' },
-  { icon: '🚚', title: 'Despacho a obra', desc: 'Entregamos donde usted necesite dentro de la región. Flota propia para cumplir tiempos.' },
+  { icon: '🚚', title: 'Despacho a obra', desc: 'Entregamos donde usted necesite dentro de la región.' },
   { icon: '🤝', title: 'Asesoría personalizada', desc: 'Le ayudamos a elegir el material correcto. Atención directa, sin intermediarios.' },
   { icon: '💲', title: 'Precios directos', desc: 'Al ser productores directos, ofrecemos los mejores precios del mercado.' },
 ]
@@ -59,7 +58,7 @@ export default function Nosotros() {
               <p>Cominagro S.A.S. es una empresa que construye confianza desde hace más de 27 años, producimos, extraemos y comercializamos materiales de construcción de alta calidad para proyectos de vivienda, infraestructura, urbanismo e industria.
               Nuestra operación integra tres unidades estratégicas: </p>
               <p>🏗️ Prefabricados,Bloques de concreto y adoquines.</p>
-              <p>⛰️ Mina: Arena negra, arena blanca y granzón.</p>
+              <p>⛰️ Mina: Arena negra, arena blanca, recebo y granzón.</p>
               <p>🧱 Ladrillera: Ladrillo farol para divisiones y ladrillo visto.</p>
               <p>Cada uno de nuestros productos es elaborado bajo estándares propios de calidad, garantizando resistencia, durabilidad y el respaldo de una empresa con más de dos décadas de experiencia al servicio de la construcción.</p>
               <div className={styles.counters}>
@@ -73,7 +72,7 @@ export default function Nosotros() {
                 </div>
                 <div className={styles.counter}>
                   <span className={styles.counterN}>+20</span>
-                  <span className={styles.counterL}>Municipios aledaños</span>
+                  <span className={styles.counterL}>Municipios aledaños atendidos</span>
                 </div>
               </div>
             </div>

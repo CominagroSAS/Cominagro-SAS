@@ -5,8 +5,8 @@ import { proyectos, categoriasproyectos } from '../data/proyectos'
 import styles from './Proyectos.module.css'
 
 const stats = [
-  { n: '9',    l: 'Proyectos entregados' },
-  { n: '2',    l: 'Parques intervenidos' },
+  { n: '+ 500',    l: 'Proyectos entregados' },
+  //{ n: '2',    l: 'Parques intervenidos' },
   { n: '100%', l: 'Producción local' },
   { n: '27+',  l: 'Años de experiencia' },
 ]
