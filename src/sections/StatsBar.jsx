@@ -2,11 +2,13 @@ import React from 'react'
 import styles from './StatsBar.module.css'
 
 const items = [
-  { label: 'Concretos y mezclas',  sub: 'Mezclas y morteros' },
-  { label: 'Arena Blanca', sub: 'Acabados finos' },
-  { label: 'Granzón',      sub: 'Base y rellenos' },
+  { label: 'Prefabricados',  sub: 'Adoquines (vías, andenes, parques) y bloques de concreto para edificación.' },
+  { label: 'Mina', sub: 'Arena negra (concretos y cimentación), recebo/granzón (terrenos) y arena blanca (mortero, pañete y mampostería).' },
+  { label: 'Ladrillera',      sub: 'Ladrillo farol para divisiones internas/externas y fachadas a la vista.' },
+  /*
   { label: 'Ladrillos',      sub: 'Ladrillo visto y farol' },
   { label: 'Adoquines',    sub: 'Bloques de concreto y adoquines' },
+   */
 ]
 
 export default function StatsBar() {

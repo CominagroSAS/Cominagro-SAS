@@ -1,62 +1,54 @@
-/* ── STATS BAR ── */
+/* ── CONTENEDOR DE TARJETAS ── */
 .bar {
   background: var(--terracota);
-  padding: 20px 0;
+  padding: 40px 0;
 }
 
 .inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  gap: 10px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
 .item {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: center; /* Alinea los elementos internos al centro */
+  text-align: left; /* Mantiene la descripción alineada a la izquierda para mejor lectura */
   color: var(--blanco);
-  padding: 4px 12px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 8px;
+  
 }
 
 .label {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  text-align: center; /* Centra el texto del título */
+  width: 100%;
 }
 
 .sub {
-  font-size: 11px;
-  opacity: 0.8;
-  margin-top: 2px;
+  font-size: 13px;
+  line-height: 1.5;
+  opacity: 0.9;
+  margin: 0;
 }
 
+/* Ocultar divisores */
 .divider {
-  width: 1px;
-  height: 32px;
-  background: rgba(255, 255, 255, 0.25);
+  display: none;
 }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
-  .divider { 
-    display: none; 
-  }
-
   .inner {
-    justify-content: flex-start; /* Alinea los elementos al inicio (izquierda) */
-    gap: 16px 8px; /* Espaciado entre filas y columnas */
-    padding: 0 8px;
-  }
-
-  .item {
-    flex: 1 1 42%; /* Ocupa casi la mitad para forzar filas de 2 */
-    max-width: 50%;
-    align-items: flex-start;
-    text-align: left;
-    padding: 4px 8px;
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 }

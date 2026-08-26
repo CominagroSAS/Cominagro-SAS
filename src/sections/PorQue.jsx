@@ -8,7 +8,7 @@ const razones = [
       </svg>
     ),
     title: 'Origen responsable',
-    desc: 'Extraemos la tierra de nuestra mina de manera responsable con el medio ambiente.',
+    desc: 'Extraemos los materiales de nuestra mina de manera responsable con el medio ambiente.',
   },
   {
     icon: (
