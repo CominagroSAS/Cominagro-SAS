@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { RiArrowRightLine, RiMapPin2Line, RiArrowLeftSLine, RiArrowRightSLine } from 'react-icons/ri'
 import { proyectos } from '../data/proyectos'
+import { productos } from '../data/productos' // Importamos productos para resolver el material
 import styles from './Galeria.module.css'
 
 // Mostramos los primeros 5 proyectos en el home
@@ -12,6 +13,14 @@ export default function Galeria() {
 
   const prev = () => setActive(i => (i === 0 ? galeria.length - 1 : i - 1))
   const next = () => setActive(i => (i === galeria.length - 1 ? 0 : i + 1))
+
+  // Obtenemos el proyecto activo actual
+  const proyectoActual = galeria[active]
+
+  // Buscamos el nombre del producto según el productoId
+  const productoRelacionado = proyectoActual?.productoId
+    ? productos.find(p => p.id === proyectoActual.productoId)
+    : null
 
   return (
     <section className={`${styles.section} section`}>
@@ -33,8 +42,8 @@ export default function Galeria() {
           {/* Imagen principal */}
           <div className={styles.mainImg}>
             <img
-              src={galeria[active].img}
-              alt={galeria[active].title}
+              src={proyectoActual.img}
+              alt={proyectoActual.title}
               loading="lazy"
             />
             <div className={styles.mainOverlay} />
@@ -43,13 +52,19 @@ export default function Galeria() {
             <div className={styles.mainInfo}>
               <div className={styles.mainUbicacion}>
                 <RiMapPin2Line size={14} />
-                {galeria[active].ubicacion}
+                {proyectoActual.ubicacion}
               </div>
-              <h3>{galeria[active].title}</h3>
+              <h3>{proyectoActual.title}</h3>
+              
+              {/* Muestra el producto enlazado o soporta el arreglo antiguo si existe */}
               <div className={styles.mainMateriales}>
-                {galeria[active].materiales.map(m => (
-                  <span key={m} className={styles.mainMaterial}>{m}</span>
-                ))}
+                {productoRelacionado ? (
+                  <span className={styles.mainMaterial}>{productoRelacionado.title}</span>
+                ) : (
+                  proyectoActual.materiales?.map(m => (
+                    <span key={m} className={styles.mainMaterial}>{m}</span>
+                  ))
+                )}
               </div>
             </div>
 

@@ -1,26 +1,53 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { RiArrowRightLine, RiMapPin2Line } from 'react-icons/ri'
+import { RiArrowRightLine, RiMapPin2Line, RiArrowLeftLine, RiExpandDiagonalLine } from 'react-icons/ri'
 import { proyectos, categoriasproyectos } from '../data/proyectos'
+import { productos } from '../data/productos'
+import MaterialCarousel from '../componets/MaterialCarousel'
 import styles from './Proyectos.module.css'
 
 const stats = [
-  { n: '+ 500',    l: 'Proyectos entregados' },
-  //{ n: '2',    l: 'Parques intervenidos' },
+  { n: '+ 500', l: 'Proyectos entregados' },
   { n: '100%', l: 'Producción local' },
-  { n: '27+',  l: 'Años de experiencia' },
+  { n: '27+', l: 'Años de experiencia' },
 ]
 
 export default function Proyectos() {
   const [filtro, setFiltro] = useState('all')
+  const [proyectoSeleccionado, setProyectoSeleccionado] = useState(null)
 
   const proyectosFiltrados = filtro === 'all'
     ? proyectos
     : proyectos.filter(p => p.category === filtro)
 
+  const getCategoryLabel = (cat) => {
+    switch (cat) {
+      case 'parques': return 'Parque'
+      case 'edificios': return 'Proyecto Residencial'
+      case 'infraestructura': return 'Infraestructura'
+      default: return 'Proyecto'
+    }
+  }
+
+  // Previene el scroll del cuerpo cuando el modal está abierto
+  useEffect(() => {
+    if (proyectoSeleccionado) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+    return () => { document.body.style.overflow = 'auto' }
+  }, [proyectoSeleccionado])
+
+  const obtenerMateriales = (p) => {
+    const idsArr = p.productosIds || (p.productoId ? [p.productoId] : [])
+    return idsArr
+      .map(id => productos.find(prod => prod.id === id))
+      .filter(Boolean)
+  }
+
   return (
     <>
-      {/* PAGE HERO */}
       <section className={styles.pageHero}>
         <div className="container">
           <div className={styles.breadcrumb}>
@@ -31,7 +58,6 @@ export default function Proyectos() {
         </div>
       </section>
 
-      {/* STATS BANNER */}
       <div className={styles.statsBanner}>
         <div className="container">
           <div className={styles.statsInner}>
@@ -45,11 +71,9 @@ export default function Proyectos() {
         </div>
       </div>
 
-      {/* PROYECTOS */}
       <section className={`${styles.section} ${styles.sectionFirst} section`}>
         <div className="container">
 
-          {/* Filtros */}
           <div className={styles.filterBar}>
             {categoriasproyectos.map(f => (
               <button
@@ -62,37 +86,94 @@ export default function Proyectos() {
             ))}
           </div>
 
-          {/* Grid */}
           <div className={styles.grid}>
-            {proyectosFiltrados.map(p => (
-              <div key={p.id} className={styles.card}>
-                <div className={styles.imgWrap}>
-                  <img src={p.img} alt={p.title} loading="lazy" />
-                  <span className={styles.cat}>
-                    {p.category === 'parques' ? 'Parque' : 'Edificio'}
-                  </span>
-                </div>
-                <div className={styles.body}>
-                  <div className={styles.ubicacion}>
-                    <RiMapPin2Line size={13} />
-                    {p.ubicacion}
+            {proyectosFiltrados.map(p => {
+              const listaMateriales = obtenerMateriales(p)
+
+              return (
+                <div 
+                  key={p.id} 
+                  className={styles.card}
+                  onClick={() => setProyectoSeleccionado(p)}
+                >
+                  <div className={styles.imgWrap}>
+                    <img src={p.img} alt={p.title} loading="lazy" />
+                    <span className={styles.cat}>
+                      {getCategoryLabel(p.category)}
+                    </span>
+                    <button type="button" className={styles.expandBtn} aria-label="Ver en detalle">
+                      <RiExpandDiagonalLine size={18} />
+                    </button>
                   </div>
-                  <h3>{p.title}</h3>
-                  <p>{p.desc}</p>
-                  <div className={styles.materiales}>
-                    {p.materiales.map(m => (
-                      <span key={m} className={styles.material}>{m}</span>
-                    ))}
+                  
+                  <div className={styles.body}>
+                    <div className={styles.ubicacion}>
+                      <RiMapPin2Line size={14} />
+                      {p.ubicacion}
+                    </div>
+                    <h3 className={styles.cardTitle}>{p.title}</h3>
+                    <p className={styles.cardDesc}>{p.desc}</p>
+
+                    {listaMateriales.length > 0 && (
+                      <div onClick={(e) => e.stopPropagation()}>
+                        <MaterialCarousel materiales={listaMateriales} />
+                      </div>
+                    )}
                   </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
 
         </div>
       </section>
 
-      {/* CTA */}
+      {/* MODAL / TARJETA EXPANDIDA */}
+      {proyectoSeleccionado && (
+        <div className={styles.modalOverlay} onClick={() => setProyectoSeleccionado(null)}>
+          <div className={styles.modalCard} onClick={(e) => e.stopPropagation()}>
+            
+            {/* Botón de regreso en la esquina superior izquierda */}
+            <button 
+              type="button" 
+              className={styles.backBtn}
+              onClick={() => setProyectoSeleccionado(null)}
+              aria-label="Volver"
+            >
+              <RiArrowLeftLine size={22} />
+              <span>Volver</span>
+            </button>
+
+            <div className={styles.modalHeroImg}>
+              <img src={proyectoSeleccionado.img} alt={proyectoSeleccionado.title} />
+              <span className={styles.modalCat}>
+                {getCategoryLabel(proyectoSeleccionado.category)}
+              </span>
+            </div>
+
+            <div className={styles.modalBody}>
+              <div className={styles.modalUbicacion}>
+                <RiMapPin2Line size={18} />
+                {proyectoSeleccionado.ubicacion}
+              </div>
+
+              <h2 className={styles.modalTitle}>{proyectoSeleccionado.title}</h2>
+              <p className={styles.modalDesc}>{proyectoSeleccionado.desc}</p>
+
+              {obtenerMateriales(proyectoSeleccionado).length > 0 && (
+                <div className={styles.modalCarouselWrapper}>
+                  <MaterialCarousel 
+                    materiales={obtenerMateriales(proyectoSeleccionado)} 
+                    isLarge={true}
+                  />
+                </div>
+              )}
+            </div>
+
+          </div>
+        </div>
+      )}
+
       <section className={styles.ctaSection}>
         <div className="container">
           <div className={styles.ctaInner}>

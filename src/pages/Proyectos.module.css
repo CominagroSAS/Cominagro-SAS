@@ -14,12 +14,12 @@
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(185,90,62,0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(185, 90, 62, 0.12) 0%, transparent 70%);
 }
 
 .breadcrumb {
   font-size: 12px;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255, 255, 255, 0.4);
   margin-bottom: 14px;
 }
 
@@ -44,7 +44,7 @@
 
 .pageHero p {
   font-size: 16px;
-  color: rgba(255,255,255,0.65);
+  color: rgba(255, 255, 255, 0.65);
   max-width: 540px;
   line-height: 1.6;
 }
@@ -87,6 +87,10 @@
   background: var(--blanco);
 }
 
+.sectionFirst {
+  padding-top: 35px;
+}
+
 /* ── FILTER BAR ── */
 .filterBar {
   display: flex;
@@ -98,7 +102,7 @@
 .chip {
   padding: 8px 20px;
   border-radius: 24px;
-  border: 1.5px solid rgba(0,0,0,0.1);
+  border: 1.5px solid rgba(0, 0, 0, 0.1);
   font-size: 13px;
   cursor: pointer;
   background: var(--blanco);
@@ -130,9 +134,11 @@
 .card {
   background: var(--blanco);
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(0,0,0,0.07);
+  border: 1px solid rgba(0, 0, 0, 0.07);
   overflow: hidden;
   transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
@@ -173,37 +179,193 @@
 /* ── BODY ── */
 .body {
   padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
-.body h3 {
+.ubicacion {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--terracota);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.cardTitle {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--negro);
   margin-bottom: 6px;
 }
 
-.body p {
+.cardDesc {
   font-size: 13px;
   color: var(--gris);
   line-height: 1.55;
   margin-bottom: 12px;
 }
 
-/* ── TAGS ── */
-.tags {
-  display: flex;
-  gap: 5px;
-  flex-wrap: wrap;
+/* Contenedor cuando hay más de un producto en un proyecto */
+/* ── CONTROLES DEL CARRUSEL DE MATERIALES ── */
+.carouselContainer {
+  margin-top: auto;
 }
 
-.tag {
-  background: var(--fondo);
+.productTagRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.arrowControls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.arrowBtn {
+  background: #f0e2d5;
+  border: none;
+  color: var(--terracota, #c85a32);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  padding: 0;
+}
+
+.arrowBtn:hover {
+  background: var(--terracota, #c85a32);
+  color: #ffffff;
+}
+
+.arrowBtn:active {
+  transform: scale(0.9);
+}
+
+.productBlock {
+  background-color: #fdfbf7;
+  border: 1px solid #ebd2c1;
+  border-left: 4px solid var(--terracota, #c85a32);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.productHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed #e8d0be;
+}
+
+.productTitleBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.productTag {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--terracota, #c85a32);
+  font-weight: 700;
+}
+
+.productName {
+  font-size: 14px;
+  color: #1a1a1a;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.productThumb {
+  width: 52px;
+  height: 52px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e2d3c7;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.productThumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 2px;
+}
+
+.techGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 12px;
+}
+
+.techItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.techIcon {
+  color: var(--terracota, #c85a32);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.techText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.techLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.techVal {
+  font-size: 12px;
+  color: #4a4a4a;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ── TAGS & MATERIALES ── */
+.tags,
+.materiales {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 12px;
+}
+
+.tag,
+.material {
+  background: var(--azul-bg);
   color: var(--azul);
   font-size: 10px;
   font-weight: 700;
   padding: 3px 9px;
   border-radius: 4px;
+  letter-spacing: 0.3px;
 }
 
 /* ── CTA SECTION ── */
@@ -245,7 +407,7 @@
 
 .ctaInner p {
   font-size: 15px;
-  color: rgba(255,255,255,0.65);
+  color: rgba(255, 255, 255, 0.65);
   margin-bottom: 28px;
   line-height: 1.6;
 }
@@ -266,51 +428,267 @@
 .btnPrimary:hover {
   background: var(--terracota-d);
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(185,90,62,0.35);
+  box-shadow: 0 6px 20px rgba(185, 90, 62, 0.35);
 }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
-  .grid { grid-template-columns: repeat(2, 1fr); }
-  .statsInner { gap: 24px; }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .statsInner {
+    gap: 24px;
+  }
 }
 
 @media (max-width: 768px) {
-  .grid { grid-template-columns: 1fr; }
-  .filterBar { gap: 6px; }
-  .statsInner { justify-content: flex-start; }
-  .statItem { min-width: 45%; align-items: flex-start; }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .filterBar {
+    gap: 6px;
+  }
+  .statsInner {
+    justify-content: flex-start;
+  }
+  .statItem {
+    min-width: 45%;
+    align-items: flex-start;
+  }
 }
 
-/* ── UBICACION ── */
-.ubicacion {
+/* Cursor interactivo en tarjetas */
+.card {
+  cursor: pointer;
+  position: relative;
+}
+
+/* Botón expandir sobre la imagen pequeña */
+.expandBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  gap: 4px;
-  font-size: 12px;
-  color: var(--terracota);
-  font-weight: 600;
-  margin-bottom: 6px;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-/* ── MATERIALES ── */
-.materiales {
+.card:hover .expandBtn {
+  background: var(--terracota, #c85a32);
+  transform: scale(1.1);
+}
+
+/* ── MODAL FULLSCREEN / TARJETA AMPLIADA ── */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(6px);
   display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  margin-top: 12px;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: fadeIn 0.25s ease-out;
 }
 
-.material {
-  background: var(--azul-bg);
-  color: var(--azul);
-  font-size: 10px;
+.modalCard {
+  background: #ffffff;
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  border-radius: 16px;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Botón Volver en la esquina superior izquierda */
+.backBtn {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #1a1a1a;
+  border: 1px solid #e2e8f0;
+  padding: 8px 16px;
+  border-radius: 30px;
   font-weight: 700;
-  padding: 3px 9px;
-  border-radius: 4px;
-  letter-spacing: 0.3px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition: all 0.2s ease;
 }
 
-.sectionFirst {
-  padding-top: 35px;
+.backBtn:hover {
+  background: var(--terracota, #c85a32);
+  color: #ffffff;
+  border-color: var(--terracota, #c85a32);
+}
+
+.modalHeroImg {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  background: #000;
+}
+
+.modalHeroImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modalCat {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.modalBody {
+  padding: 24px;
+}
+
+.modalUbicacion {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--terracota, #c85a32);
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.modalTitle {
+  font-size: 24px;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.modalDesc {
+  font-size: 15px;
+  color: #4a5568;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.modalCarouselWrapper {
+  margin-top: 20px;
+}
+
+/* ── MODIFICADORES DEL CARRUSEL DENTRO DEL MODAL (GRANDE) ── */
+.carouselLarge .productBlock {
+  padding: 18px 20px;
+  border-radius: 12px;
+}
+
+.carouselLarge .productName {
+  font-size: 18px;
+}
+
+.carouselLarge .productTag {
+  font-size: 12px;
+}
+
+.carouselLarge .productThumb {
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+}
+
+.carouselLarge .arrowBtn {
+  width: 28px;
+  height: 28px;
+}
+
+.carouselLarge .techLabel {
+  font-size: 12px;
+}
+
+.carouselLarge .techVal {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Adaptación responsive para pantallas pequeñas */
+@media (max-width: 640px) {
+  /* Botón volver optimizado para móviles */
+  .backBtn {
+    top: 12px;
+    left: 12px;
+    padding: 5px 12px;
+    font-size: 12px;
+    gap: 4px;
+  }
+
+  .backBtn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Ajustes generales del modal en móvil */
+  .modalHeroImg {
+    height: 200px;
+  }
+
+  .modalBody {
+    padding: 16px;
+  }
+
+  .modalTitle {
+    font-size: 18px;
+  }
+
+  .modalDesc {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
+  .carouselLarge .productThumb {
+    width: 56px;
+    height: 56px;
+  }
+
+  .carouselLarge .productName {
+    font-size: 15px;
+  }
 }
