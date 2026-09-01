@@ -139,6 +139,9 @@
   transition: all var(--transition);
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+  position: relative;
+  height: 100%; /* Garantiza que todas las tarjetas midan exactamente lo mismo en la grilla */
 }
 
 .card:hover {
@@ -146,17 +149,20 @@
   box-shadow: var(--shadow-lg);
 }
 
-/* ── IMG ── */
+/* ── IMAGEN DE TARJETA PEQUEÑA ── */
 .imgWrap {
-  height: 200px;
+  width: 100%;
+  aspect-ratio: 16 / 10;
   position: relative;
   overflow: hidden;
+  background-color: #1e293b;
 }
 
 .imgWrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   transition: transform 0.4s ease;
 }
 
@@ -164,16 +170,27 @@
   transform: scale(1.05);
 }
 
-.cat {
+/* Botón expandir sobre la imagen pequeña */
+.expandBtn {
   position: absolute;
   top: 12px;
   right: 12px;
-  background: var(--terracota);
-  color: var(--blanco);
-  font-size: 10px;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover .expandBtn {
+  background: var(--terracota, #c85a32);
+  transform: scale(1.1);
 }
 
 /* ── BODY ── */
@@ -209,7 +226,6 @@
   margin-bottom: 12px;
 }
 
-/* Contenedor cuando hay más de un producto en un proyecto */
 /* ── CONTROLES DEL CARRUSEL DE MATERIALES ── */
 .carouselContainer {
   margin-top: auto;
@@ -368,130 +384,12 @@
   letter-spacing: 0.3px;
 }
 
-/* ── CTA SECTION ── */
-.ctaSection {
-  background: var(--negro);
-  padding: 80px 0;
-}
-
-.ctaInner {
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.ctaTag {
-  display: block;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--terracota);
-  margin-bottom: 14px;
-}
-
-.ctaInner h2 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(28px, 4vw, 42px);
-  font-weight: 800;
-  color: var(--blanco);
-  margin-bottom: 14px;
-  line-height: 1.1;
-}
-
-.ctaInner h2 em {
-  color: var(--terracota);
-  font-style: normal;
-}
-
-.ctaInner p {
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.65);
-  margin-bottom: 28px;
-  line-height: 1.6;
-}
-
-.btnPrimary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 13px 28px;
-  background: var(--terracota);
-  color: var(--blanco);
-  border-radius: var(--radius);
-  font-size: 15px;
-  font-weight: 600;
-  transition: all var(--transition);
-}
-
-.btnPrimary:hover {
-  background: var(--terracota-d);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(185, 90, 62, 0.35);
-}
-
-/* ── RESPONSIVE ── */
-@media (max-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .statsInner {
-    gap: 24px;
-  }
-}
-
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-  .filterBar {
-    gap: 6px;
-  }
-  .statsInner {
-    justify-content: flex-start;
-  }
-  .statItem {
-    min-width: 45%;
-    align-items: flex-start;
-  }
-}
-
-/* Cursor interactivo en tarjetas */
-.card {
-  cursor: pointer;
-  position: relative;
-}
-
-/* Botón expandir sobre la imagen pequeña */
-.expandBtn {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: rgba(0, 0, 0, 0.55);
-  color: #ffffff;
-  border: none;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(4px);
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.card:hover .expandBtn {
-  background: var(--terracota, #c85a32);
-  transform: scale(1.1);
-}
-
 /* ── MODAL FULLSCREEN / TARJETA AMPLIADA ── */
 .modalOverlay {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background-color: rgba(15, 23, 42, 0.75);
+  background-color: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
@@ -539,17 +437,23 @@
   border-color: var(--terracota, #c85a32);
 }
 
+/* ── IMAGEN EN MODAL (MUESTRA TAMAÑO Y PROPORCIÓN COMPLETA) ── */
 .modalHeroImg {
   position: relative;
   width: 100%;
-  height: 280px;
-  background: #000;
+  height: 60vh;
+  max-height: 500px;
+  background: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .modalHeroImg img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* Renderiza la foto entera respetando sus dimensiones reales */
 }
 
 .modalCat {
@@ -632,6 +536,69 @@
   font-weight: 600;
 }
 
+/* ── CTA SECTION ── */
+.ctaSection {
+  background: var(--negro);
+  padding: 80px 0;
+}
+
+.ctaInner {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ctaTag {
+  display: block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--terracota);
+  margin-bottom: 14px;
+}
+
+.ctaInner h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  color: var(--blanco);
+  margin-bottom: 14px;
+  line-height: 1.1;
+}
+
+.ctaInner h2 em {
+  color: var(--terracota);
+  font-style: normal;
+}
+
+.ctaInner p {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  background: var(--terracota);
+  color: var(--blanco);
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 600;
+  transition: all var(--transition);
+}
+
+.btnPrimary:hover {
+  background: var(--terracota-d);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(185, 90, 62, 0.35);
+}
+
 /* Animaciones */
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -649,9 +616,37 @@
   }
 }
 
-/* Adaptación responsive para pantallas pequeñas */
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .statsInner {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .filterBar {
+    gap: 6px;
+  }
+  .statsInner {
+    justify-content: flex-start;
+  }
+  .statItem {
+    min-width: 45%;
+    align-items: flex-start;
+  }
+}
+
 @media (max-width: 640px) {
-  /* Botón volver optimizado para móviles */
+  .imgWrap {
+    aspect-ratio: 16 / 9;
+  }
+
   .backBtn {
     top: 12px;
     left: 12px;
@@ -665,9 +660,9 @@
     height: 16px;
   }
 
-  /* Ajustes generales del modal en móvil */
   .modalHeroImg {
-    height: 200px;
+    height: 45vh;
+    max-height: 320px;
   }
 
   .modalBody {
