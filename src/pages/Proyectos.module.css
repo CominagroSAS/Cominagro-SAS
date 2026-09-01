@@ -141,7 +141,7 @@
   flex-direction: column;
   cursor: pointer;
   position: relative;
-  height: 100%; /* Garantiza que todas las tarjetas midan exactamente lo mismo en la grilla */
+  height: 100%;
 }
 
 .card:hover {
@@ -229,13 +229,16 @@
 /* ── CONTROLES DEL CARRUSEL DE MATERIALES ── */
 .carouselContainer {
   margin-top: auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .productTagRow {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 8px;
-  margin-bottom: 2px;
+  margin-bottom: 6px;
 }
 
 .arrowControls {
@@ -248,8 +251,8 @@
   background: #f0e2d5;
   border: none;
   color: var(--terracota, #c85a32);
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -274,13 +277,16 @@
   border-left: 4px solid var(--terracota, #c85a32);
   border-radius: 8px;
   padding: 12px 14px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden; /* Evita cualquier desbordamiento visual */
 }
 
 .productHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 10px;
   margin-bottom: 10px;
   padding-bottom: 8px;
   border-bottom: 1px dashed #e8d0be;
@@ -289,6 +295,7 @@
 .productTitleBox {
   display: flex;
   flex-direction: column;
+  min-width: 0; /* Permite el truncado o ajuste de texto */
 }
 
 .productTag {
@@ -304,11 +311,12 @@
   color: #1a1a1a;
   font-weight: 700;
   line-height: 1.2;
+  word-wrap: break-word;
 }
 
 .productThumb {
-  width: 52px;
-  height: 52px;
+  width: 48px;
+  height: 48px;
   border-radius: 6px;
   overflow: hidden;
   background: #ffffff;
@@ -330,13 +338,15 @@
 .techGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px 12px;
+  gap: 8px 10px;
+  width: 100%;
 }
 
 .techItem {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
+  gap: 6px;
+  min-width: 0;
 }
 
 .techIcon {
@@ -348,20 +358,22 @@
 .techText {
   display: flex;
   flex-direction: column;
-  line-height: 1.25;
+  line-height: 1.2;
+  min-width: 0;
 }
 
 .techLabel {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   color: #1a1a1a;
 }
 
 .techVal {
-  font-size: 12px;
+  font-size: 11px;
   color: #4a4a4a;
   font-weight: 500;
-  white-space: nowrap;
+  white-space: normal; /* Cambiado a normal para permitir salto de línea si falta espacio */
+  word-break: break-word;
 }
 
 /* ── TAGS & MATERIALES ── */
@@ -408,9 +420,10 @@
   position: relative;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
   animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
 }
 
-/* Botón Volver en la esquina superior izquierda */
+/* Botón Volver */
 .backBtn {
   position: absolute;
   top: 16px;
@@ -437,12 +450,12 @@
   border-color: var(--terracota, #c85a32);
 }
 
-/* ── IMAGEN EN MODAL (MUESTRA TAMAÑO Y PROPORCIÓN COMPLETA) ── */
+/* ── IMAGEN EN MODAL ── */
 .modalHeroImg {
   position: relative;
   width: 100%;
-  height: 60vh;
-  max-height: 500px;
+  height: 55vh;
+  max-height: 450px;
   background: #0f172a;
   display: flex;
   align-items: center;
@@ -453,7 +466,7 @@
 .modalHeroImg img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Renderiza la foto entera respetando sus dimensiones reales */
+  object-fit: contain;
 }
 
 .modalCat {
@@ -472,6 +485,7 @@
 
 .modalBody {
   padding: 24px;
+  box-sizing: border-box;
 }
 
 .modalUbicacion {
@@ -500,39 +514,41 @@
 
 .modalCarouselWrapper {
   margin-top: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* ── MODIFICADORES DEL CARRUSEL DENTRO DEL MODAL (GRANDE) ── */
 .carouselLarge .productBlock {
-  padding: 18px 20px;
+  padding: 16px 18px;
   border-radius: 12px;
 }
 
 .carouselLarge .productName {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .carouselLarge .productTag {
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .carouselLarge .productThumb {
-  width: 72px;
-  height: 72px;
+  width: 64px;
+  height: 64px;
   border-radius: 8px;
 }
 
 .carouselLarge .arrowBtn {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
 }
 
 .carouselLarge .techLabel {
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .carouselLarge .techVal {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
 }
 
@@ -643,13 +659,17 @@
 }
 
 @media (max-width: 640px) {
+  .modalOverlay {
+    padding: 10px;
+  }
+
   .imgWrap {
     aspect-ratio: 16 / 9;
   }
 
   .backBtn {
-    top: 12px;
-    left: 12px;
+    top: 10px;
+    left: 10px;
     padding: 5px 12px;
     font-size: 12px;
     gap: 4px;
@@ -661,12 +681,12 @@
   }
 
   .modalHeroImg {
-    height: 45vh;
-    max-height: 320px;
+    height: 40vh;
+    max-height: 300px;
   }
 
   .modalBody {
-    padding: 16px;
+    padding: 14px;
   }
 
   .modalTitle {
@@ -678,12 +698,22 @@
     margin-bottom: 16px;
   }
 
+  /* ── AJUSTES DE SEGURIDAD EN MÓVIL PARA EVITAR DESBORDAMIENTO EN CARRUSEL ── */
+  .techGrid {
+    grid-template-columns: 1fr; /* Pasa a 1 columna para dar espacio completo a cada dato */
+    gap: 6px;
+  }
+
+  .carouselLarge .productBlock {
+    padding: 12px;
+  }
+
   .carouselLarge .productThumb {
-    width: 56px;
-    height: 56px;
+    width: 48px;
+    height: 48px;
   }
 
   .carouselLarge .productName {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
