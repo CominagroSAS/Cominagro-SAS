@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { RiSendPlaneLine, RiMailLine, RiWhatsappLine } from 'react-icons/ri'
+import emailjs from '@emailjs/browser'
 import styles from './CtaCotizar.module.css'
 
 const initialForm = {
@@ -22,12 +23,34 @@ export default function CtaCotizar() {
   const handleSubmit = e => {
     e.preventDefault()
     setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-      setSuccess(true)
-      setForm(initialForm)
-      setTimeout(() => setSuccess(false), 4000)
-    }, 1500)
+
+    // Credenciales de EmailJS de Cominagro
+    const SERVICE_ID  = 'service_8a6df9n'
+    const TEMPLATE_ID = 'template_4a2gm6i'
+    const PUBLIC_KEY  = 'MXLVG8SDYmqdFHtNH'
+
+    const templateParams = {
+      from_name: form.nombre,
+      empresa: 'No especificada (Sección CTA)',
+      correo: form.correo || 'No especificado',
+      telefono: form.telefono || 'No especificado',
+      producto: form.producto,
+      cantidad: 'No especificada',
+      mensaje: form.mensaje,
+    }
+
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
+      .then((response) => {
+        setLoading(false)
+        setSuccess(true)
+        setForm(initialForm)
+        setTimeout(() => setSuccess(false), 4000)
+      })
+      .catch((err) => {
+        console.error('Error al enviar:', err)
+        setLoading(false)
+        alert('Hubo un error al enviar la solicitud. Intente de nuevo o escríbanos por WhatsApp.')
+      })
   }
 
   return (
@@ -48,8 +71,6 @@ export default function CtaCotizar() {
             </p>
 
             <div className={styles.channels}>
-              
-              {/* CORRECCIÓN AQUÍ: Se añadió la etiqueta de apertura <a */}
               <a 
                 href="mailto:ventas-cominagro@hotmail.com"
                 className={styles.channel}
@@ -63,9 +84,8 @@ export default function CtaCotizar() {
                 </div>
               </a>
 
-              {/* CORRECCIÓN AQUÍ: Se añadió la etiqueta de apertura <a */}
               <a 
-                href="https://wa.me/573175131773?text=Hola%20Cominagro%2C%20quisiera%20cotizar"
+                href="https://wa.me/573175017359?text=Hola%20Cominagro%2C%20quisiera%20cotizar"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.channel}
@@ -75,7 +95,7 @@ export default function CtaCotizar() {
                 </div>
                 <div className={styles.channelText}>
                   <h5>WhatsApp</h5>
-                  <p>317 513 1773 · 317 403 0677</p>
+                  <p>3175017359</p>
                 </div>
               </a>
             </div>
@@ -86,7 +106,7 @@ export default function CtaCotizar() {
             <form onSubmit={handleSubmit} className={styles.form}>
               <div className={styles.row2}>
                 <div className={styles.group}>
-                  <label>Nombre completo</label>
+                  <label>Nombre completo *</label>
                   <input
                     type="text"
                     name="nombre"
@@ -97,20 +117,21 @@ export default function CtaCotizar() {
                   />
                 </div>
                 <div className={styles.group}>
-                  <label>Teléfono</label>
+                  <label>Teléfono *</label>
                   <input
                     type="tel"
                     name="telefono"
                     value={form.telefono}
                     onChange={handleChange}
                     placeholder="300 000 0000"
+                    required
                   />
                 </div>
               </div>
 
               <div className={styles.row2}>
                 <div className={styles.group}>
-                  <label>Producto de interés</label>
+                  <label>Producto de interés *</label>
                   <select
                     name="producto"
                     value={form.producto}
@@ -140,7 +161,7 @@ export default function CtaCotizar() {
               </div>
 
               <div className={styles.group}>
-                <label>Cuéntenos sobre su proyecto</label>
+                <label>Cuéntenos sobre su proyecto *</label>
                 <textarea
                   name="mensaje"
                   value={form.mensaje}

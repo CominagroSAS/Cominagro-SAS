@@ -66,7 +66,7 @@ export default function Footer() {
               </div>
               <div className={styles.contactItem}>
                 <RiPhoneLine size={15} />
-                <span>317 513 1773 &nbsp;|&nbsp; 317 403 0677</span>
+                <span>3175017359 &nbsp;</span>
               </div>
               <div className={styles.contactItem}>
                 <RiMailLine size={15} />
