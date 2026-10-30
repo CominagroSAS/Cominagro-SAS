@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { RiMapPin2Line, RiPhoneLine, RiMailLine, RiTimeLine, RiSendPlaneLine, RiWhatsappLine } from 'react-icons/ri'
+import emailjs from '@emailjs/browser'
 import styles from './Contacto.module.css'
 
 const initialForm = {
@@ -24,12 +25,34 @@ export default function Contacto() {
   const handleSubmit = e => {
     e.preventDefault()
     setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-      setSuccess(true)
-      setForm(initialForm)
-      setTimeout(() => setSuccess(false), 4000)
-    }, 1500)
+
+    // Credenciales de EmailJS configuradas
+    const SERVICE_ID  = 'service_8a6df9n'
+    const TEMPLATE_ID = 'template_4a2gm6i'
+    const PUBLIC_KEY  = 'MXLVG8SDYmqdFHtNH'
+
+    const templateParams = {
+      from_name: form.nombre,
+      empresa: form.empresa || 'No especificada',
+      correo: form.correo || 'No especificado',
+      telefono: form.telefono,
+      producto: form.producto,
+      cantidad: form.cantidad || 'No especificada',
+      mensaje: form.mensaje,
+    }
+
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
+      .then((response) => {
+        setLoading(false)
+        setSuccess(true)
+        setForm(initialForm)
+        setTimeout(() => setSuccess(false), 4000)
+      })
+      .catch((err) => {
+        console.error('Error al enviar:', err)
+        setLoading(false)
+        alert('Hubo un error al enviar la solicitud. Intente de nuevo o escríbanos por WhatsApp.')
+      })
   }
 
   return (
